@@ -1,0 +1,382 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#aec6ff",
+                        "inverse-surface": "#303031",
+                        "primary-container": "#d8e2ff",
+                        "on-background": "#1b1c1c",
+                        "on-secondary-fixed": "#131b2c",
+                        "on-secondary-fixed-variant": "#3f4759",
+                        "tertiary-fixed-dim": "#debbdf",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c6c6c6",
+                        "tertiary": "#715574",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#efeded",
+                        "surface-bright": "#fbf9f9",
+                        "on-secondary-container": "#3f4759",
+                        "on-surface-variant": "#474747",
+                        "surface-container-high": "#e9e8e7",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#fcd7fc",
+                        "on-tertiary-fixed": "#29132d",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#aec6ff",
+                        "surface-variant": "#e3e2e2",
+                        "surface-dim": "#dbdad9",
+                        "secondary-container": "#dae2f9",
+                        "on-surface": "#1b1c1c",
+                        "tertiary-fixed": "#fcd7fc",
+                        "surface-container-highest": "#e3e2e2",
+                        "on-primary-fixed-variant": "#11448e",
+                        "background": "#fbf9f9",
+                        "on-tertiary-container": "#583e5b",
+                        "outline": "#777777",
+                        "surface-tint": "#325da8",
+                        "secondary": "#565e71",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary-fixed": "#dae2f9",
+                        "surface-container-low": "#f5f3f3",
+                        "on-tertiary-fixed-variant": "#583e5b",
+                        "on-primary-container": "#11448e",
+                        "primary": "#325da8",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#bec6dd",
+                        "on-error-container": "#93000a",
+                        "surface": "#fbf9f9",
+                        "on-primary-fixed": "#001a42",
+                        "status-pass": "#10B981",
+                        "status-fail": "#EF4444",
+                        "status-review": "#F59E0B",
+                        "status-false-reject": "#6366F1",
+                        "status-missed-defect": "#991B1B",
+                        "status-uncertain": "#64748B"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "base": "4px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "gutter": "12px",
+                        "sm": "8px",
+                        "margin": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["11px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                        "display-lg": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "data-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            font-size: 20px;
+        }
+        .pressed-effect:active {
+            transform: translateY(1px);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(70, 72, 212, 0.1);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style id="aoi-font-inter">:where(h1,h2,h3,h4,h5,h6,p,span,a,button,div,td,th,label,input,select,option,li,pre,code,strong,small,em){font-family:'Inter',sans-serif !important;}.material-symbols-outlined{font-family:'Material Symbols Outlined' !important;}</style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-fixed">
+<!-- SideNavBar Component -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-sm bg-surface-container-low border-r border-outline-variant w-64 z-50">
+<div class="mb-lg px-sm pt-sm">
+<div class="flex flex-col gap-xs">
+<a href="index.html" title="Home"><img alt="AOI PRO Logo" class="w-48 h-auto object-contain" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4="></a>
+</div>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps" href="dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps" href="inspection.html">
+<span class="material-symbols-outlined">biotech</span>
+                Inspection
+            </a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps" href="attention.html">
+<span class="material-symbols-outlined">visibility</span>
+                AI Attention Map
+            </a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps" href="log.html">
+<span class="material-symbols-outlined">history</span>
+                Log
+            </a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps" href="reports.html">
+<span class="material-symbols-outlined">assessment</span>
+                Reports
+            </a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps" href="settings.html">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-sm px-md py-sm bg-secondary-container text-on-secondary-container rounded-lg transition-transform duration-150 ease-in-out font-label-caps text-label-caps" href="about.html">
+<span class="material-symbols-outlined">info</span>
+                About
+            </a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-sm px-sm">
+<div class="flex items-center gap-sm mb-md p-sm bg-surface rounded-lg">
+<img alt="Admin Profile" class="w-10 h-10 rounded-full object-cover border border-outline" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=">
+<div class="overflow-hidden">
+<p class="font-bold text-on-surface truncate">Admin</p>
+<p class="text-xs text-on-surface-variant">Administrator</p>
+<p class="text-[10px] text-secondary font-data-mono uppercase mt-0.5">Session: 08:42:15</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps pressed-effect">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </button>
+</div>
+</aside>
+<main class="ml-64 p-lg min-h-screen">
+<header class="mb-xl flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary">About AOI PRO</h2>
+<p class="text-on-surface-variant max-w-2xl mt-sm">Deep-dive into the architectural integrity of AOI PRO' Automated Optical Inspection system. Understanding the synergy between hardware precision and neural intelligence.</p>
+</div>
+<div class="flex gap-sm">
+<span class="px-sm py-1 bg-surface-container-highest text-secondary font-label-caps text-label-caps rounded flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+                    V.4.2.0-STABLE
+                </span>
+<span class="px-sm py-1 bg-status-pass/10 text-status-pass font-label-caps text-label-caps rounded flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    SYSTEM AUTHENTICATED
+                </span>
+</div>
+</header>
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Company Mission Card -->
+<div class="col-span-12 md:col-span-4 bg-surface border border-outline-variant p-lg rounded-xl flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md mb-md text-primary">AOI PRO</h3>
+<p class="text-on-surface-variant italic mb-lg">"Inspection you can trust — auto-clear the good boards, escalate only what truly needs a human."</p>
+<p class="text-body-md mb-md">AOI PRO builds decision-support AI that sits on top of existing AOI machines. Instead of replacing the line, our system acts as a second opinion: it confirms confident passes, flags genuine anomalies, and routes only the uncertain cases to operators — cutting manual review while never letting a defect through unchecked.</p>
+<p class="text-body-md">The model evolved from an EfficientNet classifier — which over-fit to lighting and conveyor rails and could not confidently pass good boards — to a robust <strong>golden-template registration</strong> engine with per-board references, ECC sub-pixel alignment, and AOI/AI consensus. The current release auto-detects board type, localizes defects with a per-pixel anomaly heatmap, and is engineered so a good board is never auto-rejected.</p>
+</div>
+<div class="mt-xl flex flex-wrap gap-md items-center">
+<img alt="Python" class="h-6" src="https://cdn.simpleicons.org/python">
+<img alt="OpenCV" class="h-6" src="https://cdn.simpleicons.org/opencv">
+<img alt="NumPy" class="h-6" src="https://cdn.simpleicons.org/numpy">
+<img alt="FastAPI" class="h-6" src="https://cdn.simpleicons.org/fastapi">
+<div class="h-4 w-px bg-outline-variant"></div>
+<span class="text-xs font-data-mono text-outline uppercase tracking-wider">Primary Stack</span>
+</div>
+</div>
+<!-- Physical AOI vs AI Safety Layer Comparison -->
+<div class="col-span-12 md:col-span-8 bg-surface border border-outline-variant p-lg rounded-xl">
+<h3 class="font-headline-md text-headline-md mb-lg text-primary">System Performance Comparison</h3>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="py-sm px-md text-left font-label-caps text-secondary">METRIC</th>
+<th class="py-sm px-md text-left font-label-caps text-secondary">ETS-AOI-900 (HARDWARE)</th>
+<th class="py-sm px-md text-left font-label-caps text-primary">AOI PRO (AI LAYER)</th>
+</tr>
+</thead>
+<tbody class="text-body-sm">
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-semibold">Role</td>
+<td class="py-md px-md text-on-surface-variant">Primary PASS/FAIL inspection</td>
+<td class="py-md px-md font-medium">AI second opinion that confirms or flags</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-semibold">Method</td>
+<td class="py-md px-md text-on-surface-variant">Optical (template matching, OCV/OCR)</td>
+<td class="py-md px-md font-medium">Golden-template registration (ORB + ECC) + unsupervised change detection</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-semibold">Output</td>
+<td class="py-md px-md text-on-surface-variant">Binary PASS / FAIL</td>
+<td class="py-md px-md font-medium">6 calibrated outcomes</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-semibold">Unsure Cases</td>
+<td class="py-md px-md text-on-surface-variant">Fixed thresholds</td>
+<td class="py-md px-md font-medium text-status-review">Escalates to human review</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="py-md px-md font-semibold">Explainability</td>
+<td class="py-md px-md text-on-surface-variant">Rule-based result</td>
+<td class="py-md px-md font-medium">Per-pixel anomaly heatmap (defect localization)</td>
+</tr>
+<tr>
+<td class="py-md px-md font-semibold">Measured Performance</td>
+<td class="py-md px-md text-on-surface-variant italic">None in manual</td>
+<td class="py-md px-md font-bold text-status-pass">0.83 separation AUC · ~82% auto-decided</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-lg p-md bg-inverse-surface text-inverse-on-surface rounded-lg">
+<p class="text-xs font-data-mono flex flex-wrap gap-x-md">
+<span class="text-primary-fixed-dim uppercase">Key Stats:</span>
+<span class="">0.83 separation AUC</span>
+<span class="text-outline">|</span>
+<span class="">~82% boards auto-decided</span>
+<span class="text-outline">|</span>
+<span class="">0 good boards auto-rejected</span>
+</p>
+</div>
+</div>
+<!-- High Fidelity Architecture Section -->
+<div class="col-span-12 bg-surface border border-outline-variant p-xl rounded-xl">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-md">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">System Architecture &amp; Inference Flow</h3>
+<p class="text-on-surface-variant font-body-sm mt-xs">Schematic of the golden-template inspection pipeline &mdash; software / FPGA scoring and AOI/AI consensus.</p>
+</div>
+<div class="flex gap-md">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 bg-primary rounded-full"></div>
+<span class="text-[10px] font-label-caps uppercase text-on-surface-variant">Golden-Template Pipeline</span>
+</div>
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 bg-status-review rounded-full"></div>
+<span class="text-[10px] font-label-caps uppercase text-on-surface-variant">AOI / AI Consensus</span>
+</div>
+</div>
+</div>
+<div class="relative w-full aspect-[16/7] bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden group">
+<img alt="AOI PRO System Architecture" class="w-full h-full object-contain p-md" src="architecture.svg">
+<div class="absolute bottom-md right-md">
+<button class="p-xs bg-surface-container-highest/80 backdrop-blur rounded border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+</div>
+</div>
+<!-- Technology Stack Section -->
+<div class="mt-xl pt-xl border-t border-outline-variant">
+<h4 class="font-label-caps text-label-caps text-secondary mb-lg uppercase tracking-widest text-center">Engineered With Industrial-Grade Technology</h4>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-lg items-center px-lg">
+<div class="flex flex-col items-center gap-sm group">
+<div class="w-16 h-16 flex items-center justify-center p-sm rounded-lg bg-white border border-outline-variant group-hover:border-primary transition-colors">
+<img alt="Python" class="max-h-full max-w-full" src="https://cdn.simpleicons.org/python">
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">Python</span>
+</div>
+<div class="flex flex-col items-center gap-sm group">
+<div class="w-16 h-16 flex items-center justify-center p-sm rounded-lg bg-white border border-outline-variant group-hover:border-primary transition-colors">
+<img alt="OpenCV" class="max-h-full max-w-full" src="https://cdn.simpleicons.org/opencv">
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">OpenCV</span>
+</div>
+<div class="flex flex-col items-center gap-sm group">
+<div class="w-16 h-16 flex items-center justify-center p-sm rounded-lg bg-white border border-outline-variant group-hover:border-primary transition-colors">
+<img alt="NumPy" class="max-h-full max-w-full" src="https://cdn.simpleicons.org/numpy">
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">NumPy</span>
+</div>
+<div class="flex flex-col items-center gap-sm group">
+<div class="w-16 h-16 flex items-center justify-center p-sm rounded-lg bg-white border border-outline-variant group-hover:border-primary transition-colors">
+<img alt="FastAPI" class="max-h-full max-w-full" src="https://cdn.simpleicons.org/fastapi">
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">FastAPI</span>
+</div>
+<div class="flex flex-col items-center gap-sm group">
+<div class="w-16 h-16 flex items-center justify-center p-sm rounded-lg bg-white border border-outline-variant group-hover:border-primary transition-colors">
+<img alt="JavaScript" class="max-h-full max-w-full" src="https://cdn.simpleicons.org/javascript">
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">JavaScript</span>
+</div>
+<div class="flex flex-col items-center gap-sm group">
+<div class="w-16 h-16 flex items-center justify-center p-sm rounded-lg bg-white border border-outline-variant group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[32px] text-outline group-hover:text-primary transition-colors">settings_input_component</span>
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant uppercase">ETS-AOI-900</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="mt-xl border-t border-outline-variant pt-lg flex flex-col md:flex-row justify-between gap-md">
+<div class="flex flex-col gap-sm">
+<div class="w-40 mb-sm">
+<img alt="AOI PRO Logo" class="w-full h-auto object-contain opacity-80" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=">
+</div>
+<p class="font-body-sm text-on-surface-variant max-w-sm">© 2026 Paul Rojer R. · AOI PRO</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-xl">
+<div class="flex flex-col gap-xs">
+<p class="font-label-caps text-label-caps text-secondary">RESOURCES</p>
+<a class="text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="resources.html">Whitepapers</a>
+<a class="text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="resources.html">Docs</a>
+</div>
+<div class="flex flex-col gap-xs">
+<p class="font-label-caps text-label-caps text-secondary">SYSTEM</p>
+<a class="text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="#">PCB/SMT</a>
+<a class="text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="#">Integration</a>
+</div>
+<div class="flex flex-col gap-xs">
+<p class="font-label-caps text-label-caps text-secondary">LEGAL</p>
+<a class="text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="#">Privacy Policy</a>
+<a class="text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="#">Terms</a>
+</div>
+</div>
+</footer>
+</main>
+<script>/*nav-helper-injected*/
+document.querySelectorAll('button').forEach(function(b){
+  var t=(b.textContent||'').trim().toLowerCase();
+  if(t.indexOf('sign in')>-1||t.indexOf('get started')>-1||t.indexOf('account')>-1||t.indexOf('sign up')>-1)
+    b.addEventListener('click',function(){location.href='login.html';});
+});
+</script>
+</body></html>

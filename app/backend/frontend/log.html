@@ -1,0 +1,290 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Inspection Log | AOI PRO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;family=Jetbrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">tailwind.config = {theme: {extend: {colors: {"surface-container-highest": "#e2e2e2", "surface-dim": "#dadada", "on-primary-fixed-variant": "#12448f", error: "#ba1a1a", "surface-variant": "#e2e2e2", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "status-missed-defect": "#991B1B", "secondary-fixed": "#dbe2f9", "on-primary": "#ffffff", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#3f4759", "on-primary-container": "#12448f", "surface-container-high": "#e8e8e8", "status-fail": "#EF4444", "surface-container": "#eeeeee", "on-tertiary-fixed-variant": "#583e5a", tertiary: "#715573", "on-secondary-fixed": "#141b2c", "outline-variant": "#c6c6c6", "on-background": "#1b1b1b", "on-surface": "#1b1b1b", "on-secondary": "#ffffff", "secondary-container": "#dbe2f9", "on-secondary-container": "#3f4759", "status-pass": "#10B981", "on-tertiary": "#ffffff", "on-tertiary-fixed": "#29132d", "status-uncertain": "#64748B", "surface-tint": "#335ca8", "text-light": "#111827", "tertiary-fixed-dim": "#dfbcdf", "background-dark": "#0F172A", outline: "#777777", "secondary-fixed-dim": "#bfc6dc", surface: "#f9f9f9", "surface-bright": "#f9f9f9", "primary-fixed": "#d8e2ff", "status-false-reject": "#6366F1", "surface-light": "#FFFFFF", "primary-container": "#d8e2ff", "tertiary-container": "#fcd7fb", "primary-fixed-dim": "#aec6ff", "surface-container-low": "#f3f3f3", "background-light": "#F3F4F6", primary: "#335ca8", "on-surface-variant": "#474747", "surface-dark": "#1E293B", "inverse-surface": "#303030", background: "#f9f9f9", "on-tertiary-container": "#583e5a", "on-error-container": "#93000a", "tertiary-fixed": "#fcd7fb", "text-dark": "#F8FAFC", "status-review": "#F59E0B", "inverse-primary": "#aec6ff", "inverse-on-surface": "#f1f1f1", secondary: "#575e71", "on-primary-fixed": "#001a42"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {margin: "16px", md: "16px", xs: "4px", sm: "8px", xl: "40px", base: "4px", lg: "24px", gutter: "12px"}, fontFamily: {"body-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Hanken Grotesk"], "display-lg": ["Hanken Grotesk"], "data-mono": ["JetBrains Mono"], "label-caps": ["JetBrains Mono"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Inter"], label: ["Jetbrains Mono"]}, fontSize: {"body-md": ["14px", {lineHeight: "1.5", fontWeight: "400"}], "body-sm": ["13px", {lineHeight: "1.4", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "1.3", fontWeight: "600"}], "display-lg": ["36px", {lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700"}], "data-mono": ["12px", {lineHeight: "1.0", letterSpacing: "0.02em", fontWeight: "500"}], "label-caps": ["11px", {lineHeight: "1.0", fontWeight: "700"}]}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            font-size: 20px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F3F4F6;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 2px;
+        }
+        
+        .btn-industrial {
+            position: relative;
+            transition: all 0.1s ease;
+        }
+        .btn-industrial:active {
+            transform: translateY(1px);
+        }
+    </style>
+<style id="aoi-font-inter">:where(h1,h2,h3,h4,h5,h6,p,span,a,button,div,td,th,label,input,select,option,li,pre,code,strong,small,em){font-family:'Inter',sans-serif !important;}.material-symbols-outlined{font-family:'Material Symbols Outlined' !important;}</style>
+</head>
+<body class="bg-background font-body-md text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low border-r border-outline-variant flex flex-col p-sm z-50">
+<div class="px-sm py-md mb-lg"><div class="flex flex-col gap-xs">
+<a href="index.html" title="Home"><img alt="AOI PRO Logo" class="w-48 h-auto object-contain" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4="></a>
+</div></div>
+<nav class="flex-grow space-y-1">
+<!-- Navigation Items Mapping -->
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps rounded-lg" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps rounded-lg" href="inspection.html">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+                Inspection
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps rounded-lg" href="attention.html">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                AI Attention Map
+            </a>
+<!-- ACTIVE TAB: Log -->
+<a class="flex items-center gap-md px-md py-sm bg-secondary-container text-on-secondary-container font-label-caps text-label-caps rounded-lg transition-transform duration-150 ease-in-out" href="log.html">
+<span class="material-symbols-outlined" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+                Log
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps rounded-lg" href="reports.html">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+                Reports
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps rounded-lg" href="settings.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out font-label-caps text-label-caps rounded-lg" href="about.html">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+                About
+            </a>
+</nav>
+<div class="mt-auto pt-md border-t border-outline-variant space-y-1">
+<div class="flex items-center gap-md px-md py-sm mb-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold">Admin</span>
+<span class="font-label-caps text-[9px] text-on-surface-variant">ADMINISTRATOR</span>
+</div>
+</div>
+<button class="w-full flex items-center gap-md px-md py-sm text-error hover:bg-error-container/20 transition-transform duration-150 ease-in-out font-label-caps text-label-caps rounded-lg">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- Header / Top Bar -->
+<header class="h-20 flex justify-between items-center px-lg bg-surface border-b border-outline-variant sticky top-0 z-40">
+<div class="flex items-center gap-md">
+
+<span class="px-sm py-1 bg-surface-container-highest text-secondary font-data-mono text-data-mono rounded uppercase">Session: Live_Sync_042</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative group">
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-on-surface-variant opacity-60">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-sm text-body-sm w-64 focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all" placeholder="Search serial numbers..." type="text">
+</div>
+<button class="btn-industrial flex items-center gap-sm px-md py-2 bg-primary text-on-primary font-label-caps text-label-caps rounded-lg">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                    Export CSV
+                </button>
+</div>
+</header>
+<!-- Tooling / Filters -->
+<section class="p-lg bg-surface-container-lowest grid grid-cols-12 gap-gutter">
+<div class="col-span-12 flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mr-md">Filter by Outcome:</span>
+<button class="px-md py-1.5 rounded-full border border-outline-variant bg-surface-light font-label-caps text-label-caps hover:bg-surface-container text-on-surface-variant transition-colors">ALL</button>
+<button class="px-md py-1.5 rounded-full border border-status-pass/30 bg-status-pass/5 font-label-caps text-label-caps text-status-pass hover:bg-status-pass/10 transition-colors">PASS</button>
+<button class="px-md py-1.5 rounded-full border border-status-fail/30 bg-status-fail/5 font-label-caps text-label-caps text-status-fail hover:bg-status-fail/10 transition-colors">FAIL</button>
+<button class="px-md py-1.5 rounded-full border border-status-review/30 bg-status-review/5 font-label-caps text-label-caps text-status-review hover:bg-status-review/10 transition-colors">REVIEW</button>
+<button class="px-md py-1.5 rounded-full border border-status-missed-defect/30 bg-status-missed-defect/5 font-label-caps text-label-caps text-status-missed-defect hover:bg-status-missed-defect/10 transition-colors">CRITICAL</button>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant font-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="calendar_today">calendar_today</span>
+<span class="font-data-mono">2024-10-24 — 2024-10-25</span>
+</div>
+</div>
+</section>
+<!-- Dense Data Table Container -->
+<section class="flex-grow px-lg pb-lg">
+<div class="bg-surface border border-outline-variant rounded shadow-sm overflow-hidden flex flex-col h-full max-h-[calc(100vh-250px)]">
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse min-w-[1000px]">
+<thead class="sticky top-0 bg-surface-container text-on-surface font-label-caps text-label-caps border-b border-outline-variant z-10">
+<tr>
+<th class="px-md py-3 font-bold uppercase tracking-wider w-12">
+<input class="rounded-sm border-outline focus:ring-secondary text-secondary" type="checkbox">
+</th>
+<th class="px-md py-3 font-bold uppercase tracking-wider">Timestamp</th>
+<th class="px-md py-3 font-bold uppercase tracking-wider">PCB Type</th>
+<th class="px-md py-3 font-bold uppercase tracking-wider">Serial Number</th>
+<th class="px-md py-3 font-bold uppercase tracking-wider">Outcome</th>
+<th class="px-md py-3 font-bold uppercase tracking-wider">Match %</th>
+<th class="px-md py-3 font-bold uppercase tracking-wider">Anomaly</th>
+<th class="px-md py-3 font-bold uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/50 bg-white"><tr><td class="px-md py-xl text-center text-on-surface-variant opacity-60 font-body-md" colspan="8">No data available for the selected filters.</td></tr></tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="mt-auto px-md py-3 bg-surface-container border-t border-outline-variant flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing <span class="font-semibold text-primary" id="entryCount">0</span> entries</span>
+<div class="flex items-center gap-xs">
+<button class="p-1 hover:bg-surface-container-high rounded disabled:opacity-30" disabled=""><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="w-8 h-8 rounded bg-secondary text-on-secondary font-label-caps text-label-caps">1</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-high font-label-caps text-label-caps">2</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-high font-label-caps text-label-caps">3</button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="w-8 h-8 rounded hover:bg-surface-container-high font-label-caps text-label-caps">42</button>
+<button class="p-1 hover:bg-surface-container-high rounded"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Insights Summary (Bento Minimal) -->
+<section class="grid grid-cols-4 gap-gutter p-lg border-t border-outline-variant bg-surface-container-low">
+<div class="bg-surface p-md rounded border border-outline-variant">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant">TODAY'S VOLUME</span>
+<span class="material-symbols-outlined text-secondary" data-icon="analytics">analytics</span>
+</div>
+<p class="font-display-lg text-headline-md text-primary" id="cardVolume">0</p>
+<div class="mt-xs text-status-pass font-label-caps text-[10px] flex items-center gap-xs">
+<span class="material-symbols-outlined text-[12px]" data-icon="trending_up">trending_up</span>
+                    +12% VS YESTERDAY
+                </div>
+</div>
+<div class="bg-surface p-md rounded border border-outline-variant">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant">YIELD RATE</span>
+<span class="material-symbols-outlined text-status-pass" data-icon="check_circle">check_circle</span>
+</div>
+<p class="font-display-lg text-headline-md text-primary" id="cardYield">--%</p>
+<div class="mt-xs text-on-surface-variant font-label-caps text-[10px] flex items-center gap-xs">
+                    STABLE RANGE
+                </div>
+</div>
+<div class="bg-surface p-md rounded border border-outline-variant">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant">FAIL RATE</span>
+<span class="material-symbols-outlined text-status-fail" data-icon="warning">warning</span>
+</div>
+<p class="font-display-lg text-headline-md text-primary" id="cardFail">0.0%</p>
+<div class="mt-xs text-status-fail font-label-caps text-[10px] flex items-center gap-xs">
+<span class="material-symbols-outlined text-[12px]" data-icon="trending_up">trending_up</span>
+                    SPIKE DETECTED (LANE 2)
+                </div>
+</div>
+<div class="bg-surface p-md rounded border border-outline-variant">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant">AI ACCURACY</span>
+<span class="material-symbols-outlined text-secondary" data-icon="memory">memory</span>
+</div>
+<p class="font-display-lg text-headline-md text-primary" id="cardAcc">--%</p>
+<div class="mt-xs text-on-surface-variant font-label-caps text-[10px] flex items-center gap-xs">
+                    MODEL: GOLDEN-TEMPLATE
+                </div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-auto px-xl py-lg bg-surface-container-lowest border-t border-outline-variant grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="col-span-2">
+<img alt="AOI PRO Logo" class="h-16 w-auto object-contain mb-md" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=">
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mb-md">
+                    Advanced Optical Inspection and AI-driven quality assurance for high-precision manufacturing. Built for industrial scale and reliability.
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-60">© 2026 Paul Rojer R. · AOI PRO</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-md uppercase">Resources</h4>
+<ul class="space-y-sm">
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary transition-opacity" href="resources.html">PCB/SMT Documentation</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary transition-opacity" href="resources.html">AI Whitepapers</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary transition-opacity" href="resources.html">Technical Docs</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-md uppercase">Legal</h4>
+<ul class="space-y-sm">
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary transition-opacity" href="#">Privacy Policy</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary transition-opacity" href="#">Terms of Service</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary transition-opacity" href="#">Address</a></li>
+</ul>
+</div>
+</footer>
+</main>
+<!-- Contextual FAB (Only for relevant actions) -->
+<button class="fixed bottom-lg right-lg w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center btn-industrial hover:scale-105 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span class="absolute right-16 bg-primary-container text-on-primary-container px-md py-1 rounded text-label-caps font-label-caps whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">NEW INSPECTION</span>
+</button>
+
+
+<script>/*live-injected*/
+(function(){
+  var API=location.protocol.indexOf('http')===0?'':'http://localhost:8000';
+  var COLOR={CONFIRMED_PASS:'status-pass',CONFIRMED_FAIL:'status-fail',REVIEW:'status-review',FALSE_REJECT:'status-false-reject',MISSED_DEFECT:'status-missed-defect',UNCERTAIN:'status-uncertain'};
+  fetch(API+'/history?limit=200').then(function(r){return r.json();}).then(function(d){
+    var tb=document.querySelector('tbody'); if(!tb||!d.items||!d.items.length)return;
+    tb.innerHTML=d.items.map(function(it){
+      var c=COLOR[it.decision]||'surface-variant';
+      var dec=(it.decision||'').replace(/_/g,' ');
+      return '<tr class="hover:bg-surface-container-high">'
+        +'<td class="px-md py-3"></td>'
+        +'<td class="px-md py-3 font-data-mono text-data-mono">'+(it.timestamp||'')+'</td>'
+        +'<td class="px-md py-3">'+(it.pcb_type||'')+'</td>'
+        +'<td class="px-md py-3 font-data-mono">&mdash;</td>'
+        +'<td class="px-md py-3"><span class="px-sm py-xs rounded-full text-white text-[10px] font-label-caps bg-'+c+'">'+dec+'</span></td>'
+        +'<td class="px-md py-3 font-data-mono">'+(it.confidence!=null&&it.confidence!==''?Number(it.confidence).toFixed(1)+'%':'—')+'</td>'
+        +'<td class="px-md py-3 font-data-mono">'+(it.anomaly_score!=null&&it.anomaly_score!==''?Number(it.anomaly_score).toFixed(3):'—')+'</td>'
+        +'<td class="px-md py-3 text-right">&mdash;</td></tr>';
+    }).join('');
+    var ec=document.getElementById('entryCount'); if(ec)ec.textContent=d.count||d.items.length;
+  }).catch(function(){});
+  fetch(API+'/stats').then(function(r){return r.json();}).then(function(s){
+    var total=s.total||0, bd=s.by_decision||{}, pass=bd.CONFIRMED_PASS||0, fail=bd.CONFIRMED_FAIL||0;
+    var auto=(s.auto_resolved!=null)?s.auto_resolved:(pass+fail);
+    function setv(id,v){var e=document.getElementById(id); if(e)e.textContent=v;}
+    setv('cardVolume',total);
+    setv('cardYield',total?(pass/total*100).toFixed(1)+'%':'--%');
+    setv('cardFail',total?(fail/total*100).toFixed(1)+'%':'0.0%');
+    setv('cardAcc',total?(auto/total*100).toFixed(0)+'%':'--%');
+  }).catch(function(){});
+})();
+</script>
+<script>/*export-csv*/
+(function(){var API=location.protocol.indexOf('http')===0?'':'http://localhost:8000';
+var btn=Array.from(document.querySelectorAll('button,a')).find(function(e){return /export\s*csv/i.test(e.textContent||'');});
+if(!btn)return;
+btn.addEventListener('click',function(e){e.preventDefault();
+ fetch(API+'/history?limit=2000').then(function(r){return r.json();}).then(function(d){
+  var rows=d.items||[]; var cols=['timestamp','pcb_type','board_label','mode','aoi_result','ai_prediction','ai_decision','confidence','anomaly_score','decision'];
+  var csv=[cols.join(',')].concat(rows.map(function(it){return cols.map(function(c){return it[c]!=null?(''+it[c]).replace(/,/g,';'):'';}).join(',');})).join('\n');
+  var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download='inspection_log.csv'; a.click();
+ }).catch(function(){alert('Could not reach the backend to export. Is the server running?');});});
+})();
+</script>
+</body></html>

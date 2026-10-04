@@ -1,0 +1,274 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;family=Jetbrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-container-highest": "#e2e2e2", "surface-dim": "#dadada", "on-primary-fixed-variant": "#12448f", error: "#ba1a1a", "surface-variant": "#e2e2e2", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "status-missed-defect": "#991B1B", "secondary-fixed": "#dbe2f9", "on-primary": "#ffffff", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#3f4759", "on-primary-container": "#12448f", "surface-container-high": "#e8e8e8", "status-fail": "#EF4444", "surface-container": "#eeeeee", "on-tertiary-fixed-variant": "#583e5a", tertiary: "#715573", "on-secondary-fixed": "#141b2c", "outline-variant": "#c6c6c6", "on-background": "#1b1b1b", "on-surface": "#1b1b1b", "on-secondary": "#ffffff", "secondary-container": "#dbe2f9", "on-secondary-container": "#3f4759", "status-pass": "#10B981", "on-tertiary": "#ffffff", "on-tertiary-fixed": "#29132d", "status-uncertain": "#64748B", "surface-tint": "#335ca8", "text-light": "#111827", "tertiary-fixed-dim": "#dfbcdf", "background-dark": "#0F172A", outline: "#777777", "secondary-fixed-dim": "#bfc6dc", surface: "#f9f9f9", "surface-bright": "#f9f9f9", "primary-fixed": "#d8e2ff", "status-false-reject": "#6366F1", "surface-light": "#FFFFFF", "primary-container": "#d8e2ff", "tertiary-container": "#fcd7fb", "primary-fixed-dim": "#aec6ff", "surface-container-low": "#f3f3f3", "background-light": "#F3F4F6", primary: "#335ca8", "on-surface-variant": "#474747", "surface-dark": "#1E293B", "inverse-surface": "#303030", background: "#f9f9f9", "on-tertiary-container": "#583e5a", "on-error-container": "#93000a", "tertiary-fixed": "#fcd7fb", "text-dark": "#F8FAFC", "status-review": "#F59E0B", "inverse-primary": "#aec6ff", "inverse-on-surface": "#f1f1f1", secondary: "#575e71", "on-primary-fixed": "#001a42"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {margin: "16px", md: "16px", xs: "4px", sm: "8px", xl: "40px", base: "4px", lg: "24px", gutter: "12px"}, fontFamily: {"body-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Hanken Grotesk"], "display-lg": ["Hanken Grotesk"], "data-mono": ["JetBrains Mono"], "label-caps": ["JetBrains Mono"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Inter"], label: ["Jetbrains Mono"]}, fontSize: {"body-md": ["14px", {lineHeight: "1.5", fontWeight: "400"}], "body-sm": ["13px", {lineHeight: "1.4", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "1.3", fontWeight: "600"}], "display-lg": ["36px", {lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700"}], "data-mono": ["12px", {lineHeight: "1.0", letterSpacing: "0.02em", fontWeight: "500"}], "label-caps": ["11px", {lineHeight: "1.0", fontWeight: "700"}]}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .pressed-state:active {
+            transform: translateY(1px);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 12px 0 rgba(70, 72, 212, 0.15);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c6c6cd;
+            border-radius: 2px;
+        }
+        .heatmap-overlay {
+            mix-blend-mode: multiply;
+            opacity: 0.7;
+        }
+    </style>
+<style id="aoi-font-inter">:where(h1,h2,h3,h4,h5,h6,p,span,a,button,div,td,th,label,input,select,option,li,pre,code,strong,small,em){font-family:'Inter',sans-serif !important;}.material-symbols-outlined{font-family:'Material Symbols Outlined' !important;}</style>
+</head>
+<body class="bg-background font-body-md text-on-background overflow-hidden h-screen flex">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-sm bg-surface-container-low border-r border-outline-variant w-64 z-50">
+<div class="mb-lg px-sm py-md">
+<a href="index.html" title="Home"><img alt="AOI PRO Logo" class="w-48 h-auto object-contain" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4="></a>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Industrial Inspection</p>
+</div>
+<nav class="flex-1 space-y-xs overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-sm px-sm py-md text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out" href="inspection.html">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="font-label-caps text-label-caps">Inspection</span>
+</a>
+<!-- Active State: AI Attention Map -->
+<a class="flex items-center gap-sm px-sm py-md bg-secondary-container text-on-secondary-container rounded-lg transition-transform duration-150 ease-in-out" href="attention.html">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<span class="font-label-caps text-label-caps">AI Attention Map</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out" href="log.html">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-caps text-label-caps">Log</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out" href="reports.html">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="font-label-caps text-label-caps">Reports</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out" href="settings.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md text-on-surface-variant hover:bg-surface-container-high transition-transform duration-150 ease-in-out" href="about.html">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-label-caps text-label-caps">About</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-sm px-sm space-y-sm">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface">Admin</span>
+<button class="text-secondary font-label-caps text-[10px] text-left hover:underline">Logout</button>
+</div>
+</div>
+
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 flex flex-col h-full bg-background overflow-hidden relative">
+<!-- Header -->
+<header class="h-16 flex items-center justify-between px-lg border-b border-outline-variant bg-surface shrink-0">
+<div class="flex items-center gap-md">
+<h2 class="font-headline-md text-headline-md text-primary">AI Attention Map <span class="text-on-surface-variant font-normal text-body-md opacity-60">(Diagnostic Only)</span></h2>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-data-mono text-data-mono bg-surface-container-highest px-sm py-base rounded text-on-surface">SESSION_ID: RVL_982_4X</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="help_outline">help_outline</span>
+</div>
+</header>
+<!-- Dynamic Grid Content -->
+<div class="flex-1 p-lg overflow-y-auto custom-scrollbar">
+<!-- Controls Section -->
+<div class="grid grid-cols-12 gap-gutter mb-lg">
+<div class="col-span-12 lg:col-span-8 flex items-center gap-lg bg-surface border border-outline-variant p-md rounded-lg">
+<div class="flex flex-col gap-xs min-w-[240px]">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Board Type Selection</label>
+<select class="bg-surface-container-low border border-outline-variant rounded-lg px-sm py-xs text-body-md focus:ring-1 focus:ring-secondary outline-none transition-all" id="boardSelect">
+<option value="auto">Auto-detected</option>
+</select>
+</div>
+<div class="flex items-center gap-md" id="actionContainer">
+<button class="pressed-state glow-hover flex items-center gap-sm bg-secondary text-on-secondary px-lg py-sm rounded font-label-caps text-label-caps uppercase transition-all" id="generateBtn">
+<span class="material-symbols-outlined text-body-md" data-icon="bolt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                            Generate Attention Map
+                        </button>
+<div class="hidden flex items-center gap-sm text-status-fail bg-error-container/20 px-sm py-xs rounded border border-status-fail/20 relative group cursor-help" id="othersWarning">
+<span class="material-symbols-outlined text-body-md" data-icon="warning">warning</span>
+<span class="font-label-caps text-label-caps">Attention Map Unavailable</span>
+<!-- Tooltip -->
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-64 p-sm bg-inverse-surface text-inverse-on-surface text-[10px] rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                                Attention Map needs a component CSV for this board type — not available for Others.
+                            </div>
+</div>
+</div>
+<div class="ml-auto text-right max-w-xs">
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                            Visualizes model focus area. Does not influence the pass/fail decision.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Main Comparison View -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter h-[calc(100vh-280px)]">
+<!-- Original Image Pane -->
+<div class="flex flex-col border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<div class="bg-surface-container border-b border-outline-variant px-md py-xs flex justify-between items-center">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Original Acquisition</span>
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-body-md text-on-surface-variant cursor-pointer" data-icon="zoom_in">zoom_in</span>
+<span class="material-symbols-outlined text-body-md text-on-surface-variant cursor-pointer" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+<div class="flex-1 relative overflow-hidden bg-black flex items-center justify-center p-sm">
+<img id="originalImg" class="max-w-full max-h-full object-contain" data-alt="A high-resolution, macro industrial photograph of a green printed circuit board (PCB) with complex surface-mount components, silver solder points, and copper traces. The lighting is harsh and directional to emphasize texture and topography. The image is crisp and clinical, following a technological professional aesthetic with neutral tones." src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=">
+</div>
+<div class="bg-surface-container-low px-md py-xs flex justify-between items-center">
+<span class="font-data-mono text-data-mono text-on-surface-variant">SOURCE: CAM_TOP_01</span>
+<span class="font-data-mono text-data-mono text-on-surface-variant">EXP: 12ms</span>
+</div>
+</div>
+<!-- Heatmap Overlay Pane -->
+<div class="flex flex-col border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest relative">
+<div class="bg-surface-container border-b border-outline-variant px-md py-xs flex justify-between items-center">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">AI Attention Heatmap</span>
+<div class="flex gap-sm items-center">
+<span id="attnConf" class="font-label-caps text-[9px] text-on-surface-variant opacity-70">CONFIDENCE: --</span>
+<span class="material-symbols-outlined text-body-md text-on-surface-variant cursor-pointer" data-icon="layers">layers</span>
+</div>
+</div>
+<div class="flex-1 relative overflow-hidden bg-black flex items-center justify-center p-sm" id="heatmapContent">
+<!-- Base Image -->
+<img class="max-w-full max-h-full object-contain" data-alt="The same macro industrial photograph of the green PCB but now processed for visualization. The image is slightly dimmed to allow data overlays to pop. It maintains the professional SCADA-inspired clarity with sharp focus on electronic components." id="heatmapBase" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=">
+<!-- Heatmap Overlay -->
+<div class="absolute inset-0 flex items-center justify-center p-sm opacity-0 transition-opacity duration-700 pointer-events-none" id="overlayCanvas">
+<div class="relative w-full h-full max-w-full max-h-full flex items-center justify-center">
+<!-- Marker for specific attention area -->
+<div class="absolute top-[40%] left-[30%] w-16 h-16 border-2 border-dashed border-status-review animate-pulse rounded-full flex items-center justify-center">
+<span class="font-data-mono text-[9px] text-status-review bg-background-dark/80 px-1">FOCUS_A1</span>
+</div>
+</div>
+</div>
+<!-- Loading State for Map -->
+<div class="hidden absolute inset-0 bg-surface/80 flex flex-col items-center justify-center z-10" id="loadingOverlay">
+<div class="w-12 h-12 border-4 border-secondary/20 border-t-secondary rounded-full animate-spin"></div>
+<span class="mt-md font-label-caps text-label-caps text-secondary animate-pulse uppercase">Processing Weights...</span>
+</div>
+</div>
+<div class="bg-surface-container-low px-md py-xs flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<div class="w-32 h-2 bg-gradient-to-r from-blue-500 via-yellow-400 to-red-500 rounded-full"></div>
+<span class="font-label-caps text-[9px] text-on-surface-variant">ATTENTION INTENSITY</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">LAYER: CONV_L24</span>
+</div>
+</div>
+</div>
+<!-- Metadata Info Grid -->
+<div class="mt-lg grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="p-md bg-surface border border-outline-variant rounded">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Localization</p>
+<p class="font-data-mono text-headline-md text-primary">Anomaly Heatmap</p>
+</div>
+<div class="p-md bg-surface border border-outline-variant rounded">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Source</p>
+<p class="font-data-mono text-headline-md text-primary">z-score map</p>
+</div>
+<div class="p-md bg-surface border border-outline-variant rounded">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Model</p>
+<p class="font-data-mono text-headline-md text-primary">Golden v1.0</p>
+</div>
+<div class="p-md bg-surface border border-outline-variant rounded">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Engine</p>
+<p class="font-data-mono text-headline-md text-primary">OpenCV ORB+ECC</p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto grid grid-cols-1 md:grid-cols-4 gap-lg px-xl py-md w-full bg-surface-container-lowest border-t border-outline-variant shrink-0">
+<div class="col-span-1">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=" alt="AOI PRO" class="w-32 h-auto mb-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">© 2026 Paul Rojer R. · AOI PRO</p>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-primary">Operations</span>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="#">PCB/SMT</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="reports.html">Reports</a>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-primary">Support</span>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="resources.html">Docs</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="resources.html">Whitepapers</a>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-primary">Legal</span>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:underline decoration-secondary" href="#">Terms of Service</a>
+</div>
+</footer>
+</main>
+<script>
+  (function(){
+    var API = location.protocol.indexOf('http')===0 ? '' : 'http://localhost:8000';
+    var boardSelect=document.getElementById('boardSelect');
+    var generateBtn=document.getElementById('generateBtn');
+    var othersWarning=document.getElementById('othersWarning');
+    var overlayCanvas=document.getElementById('overlayCanvas');
+    var loadingOverlay=document.getElementById('loadingOverlay');
+    var originalImg=document.getElementById('originalImg');
+    var heatmapBase=document.getElementById('heatmapBase');
+    var attnConf=document.getElementById('attnConf');
+    var chosen=null;
+    function dataURLtoBlob(durl){var p=durl.split(','),mime=(p[0].match(/:(.*?);/)||[])[1]||'image/jpeg',bin=atob(p[1]),n=bin.length,u=new Uint8Array(n);while(n--)u[n]=bin.charCodeAt(n);return new Blob([u],{type:mime});}
+    try{
+      var durl=localStorage.getItem('aoi_last_image'), pcb=localStorage.getItem('aoi_last_pcb');
+      if(durl){ if(originalImg)originalImg.src=durl; if(heatmapBase)heatmapBase.src=durl; chosen=dataURLtoBlob(durl); }
+      if(pcb&&boardSelect) boardSelect.value=pcb;
+    }catch(e){}
+    function syncBoard(){var o=boardSelect.value==='Others';generateBtn.disabled=o;
+      generateBtn.classList.toggle('opacity-40',o);generateBtn.classList.toggle('cursor-not-allowed',o);generateBtn.classList.toggle('grayscale',o);
+      if(othersWarning)othersWarning.classList.toggle('hidden',!o);}
+    boardSelect.addEventListener('change',syncBoard); syncBoard();
+    generateBtn.addEventListener('click', async function(){
+      if(!chosen){ alert('No inspected image found. Run an inspection on the Inspection page first.'); return; }
+      var fd=new FormData(); fd.append('image',chosen,'board.jpg'); fd.append('pcb_type',boardSelect.value);
+      if(loadingOverlay)loadingOverlay.classList.remove('hidden'); generateBtn.disabled=true;
+      try{
+        var res=await fetch(API+'/gradcam',{method:'POST',body:fd}); var data=await res.json();
+        if(data.error){ alert('GradCAM backend error: '+data.error+' ('+(data.type||'')+').\nIf it is a missing module, run in pcb_env:  pip install grad-cam pandas'); return; }
+        if(!data.available){ alert(data.reason||'Attention map not available for this board type.'); return; }
+        if(heatmapBase)heatmapBase.src=data.overlay_png;
+        if(originalImg&&data.cropped_png)originalImg.src=data.cropped_png;
+        if(overlayCanvas)overlayCanvas.classList.add('opacity-0');
+        if(attnConf)attnConf.textContent='ANOMALY '+(data.anomaly_score!=null?Number(data.anomaly_score).toFixed(3):'—')+'  ·  MATCH '+(data.confidence!=null?data.confidence+'%':'—')+(data.is_border_hotspot?'  (EDGE FOCUS)':'');
+      }catch(err){ alert('Could not reach the backend /gradcam. Start the server (start_aoi.vbs, or: cd backend && python -m uvicorn app:app --port 8000).'); }
+      finally{ if(loadingOverlay)loadingOverlay.classList.add('hidden'); generateBtn.disabled=boardSelect.value==='Others'; }
+    });
+    var ti=document.querySelector('[data-icon="contrast"]'); if(ti){var tb=ti.closest('button'); if(tb)tb.addEventListener('click',function(){document.documentElement.classList.toggle('dark');});}
+  })();
+</script>
+
+
+
+
+</body></html>

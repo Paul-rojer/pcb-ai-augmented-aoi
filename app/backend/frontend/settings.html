@@ -1,0 +1,378 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AOI PRO | Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;family=Jetbrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        .pressed-state:active {
+            transform: translateY(1px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-container-highest": "#e2e2e2", "surface-dim": "#dadada", "on-primary-fixed-variant": "#12448f", error: "#ba1a1a", "surface-variant": "#e2e2e2", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "status-missed-defect": "#991B1B", "secondary-fixed": "#dbe2f9", "on-primary": "#ffffff", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#3f4759", "on-primary-container": "#12448f", "surface-container-high": "#e8e8e8", "status-fail": "#EF4444", "surface-container": "#eeeeee", "on-tertiary-fixed-variant": "#583e5a", tertiary: "#715573", "on-secondary-fixed": "#141b2c", "outline-variant": "#c6c6c6", "on-background": "#1b1b1b", "on-surface": "#1b1b1b", "on-secondary": "#ffffff", "secondary-container": "#dbe2f9", "on-secondary-container": "#3f4759", "status-pass": "#10B981", "on-tertiary": "#ffffff", "on-tertiary-fixed": "#29132d", "status-uncertain": "#64748B", "surface-tint": "#335ca8", "text-light": "#111827", "tertiary-fixed-dim": "#dfbcdf", "background-dark": "#0F172A", outline: "#777777", "secondary-fixed-dim": "#bfc6dc", surface: "#f9f9f9", "surface-bright": "#f9f9f9", "primary-fixed": "#d8e2ff", "status-false-reject": "#6366F1", "surface-light": "#FFFFFF", "primary-container": "#d8e2ff", "tertiary-container": "#fcd7fb", "primary-fixed-dim": "#aec6ff", "surface-container-low": "#f3f3f3", "background-light": "#F3F4F6", primary: "#335ca8", "on-surface-variant": "#474747", "surface-dark": "#1E293B", "inverse-surface": "#303030", background: "#f9f9f9", "on-tertiary-container": "#583e5a", "on-error-container": "#93000a", "tertiary-fixed": "#fcd7fb", "text-dark": "#F8FAFC", "status-review": "#F59E0B", "inverse-primary": "#aec6ff", "inverse-on-surface": "#f1f1f1", secondary: "#575e71", "on-primary-fixed": "#001a42"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {margin: "16px", md: "16px", xs: "4px", sm: "8px", xl: "40px", base: "4px", lg: "24px", gutter: "12px"}, fontFamily: {"body-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Hanken Grotesk"], "display-lg": ["Hanken Grotesk"], "data-mono": ["JetBrains Mono"], "label-caps": ["JetBrains Mono"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Inter"], label: ["Jetbrains Mono"]}, fontSize: {"body-md": ["14px", {lineHeight: "1.5", fontWeight: "400"}], "body-sm": ["13px", {lineHeight: "1.4", fontWeight: "400"}], "headline-md": ["24px", {lineHeight: "1.3", fontWeight: "600"}], "display-lg": ["36px", {lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700"}], "data-mono": ["12px", {lineHeight: "1.0", letterSpacing: "0.02em", fontWeight: "500"}], "label-caps": ["11px", {lineHeight: "1.0", fontWeight: "700"}]}}}};</script>
+<style id="aoi-font-inter">:where(h1,h2,h3,h4,h5,h6,p,span,a,button,div,td,th,label,input,select,option,li,pre,code,strong,small,em){font-family:'Inter',sans-serif !important;}.material-symbols-outlined{font-family:'Material Symbols Outlined' !important;}</style>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-hidden h-screen flex">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed left-0 top-0 h-full flex flex-col p-sm bg-surface-container-low border-r border-outline-variant w-64 z-50">
+<div class="px-md py-lg mb-md">
+<div class="flex flex-col gap-sm items-center">
+<a href="index.html" title="Home"><img alt="AOI PRO Logo" class="w-48 h-auto object-contain" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4="></a>
+<p class="font-label-caps text-[10px] text-on-surface-variant opacity-70 tracking-widest text-center mt-xs">VISION THAT NEVER BLINKS</p>
+</div>
+</div>
+<div class="flex-1 space-y-xs overflow-y-auto custom-scrollbar">
+<!-- Nav Items map from JSON -->
+<a class="flex items-center gap-md px-md py-sm transition-transform duration-150 ease-in-out hover:bg-surface-container-high text-on-surface-variant" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm transition-transform duration-150 ease-in-out hover:bg-surface-container-high text-on-surface-variant" href="inspection.html">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span class="font-label-caps text-label-caps">Inspection</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm transition-transform duration-150 ease-in-out hover:bg-surface-container-high text-on-surface-variant" href="attention.html">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<span class="font-label-caps text-label-caps">AI Attention Map</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm transition-transform duration-150 ease-in-out hover:bg-surface-container-high text-on-surface-variant" href="log.html">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-caps text-label-caps">Log</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm transition-transform duration-150 ease-in-out hover:bg-surface-container-high text-on-surface-variant" href="reports.html">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="font-label-caps text-label-caps">Reports</span>
+</a>
+<!-- Active State for Settings -->
+<a class="flex items-center gap-md px-md py-sm transition-transform duration-150 ease-in-out bg-secondary-container text-on-secondary-container rounded-lg" href="settings.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm transition-transform duration-150 ease-in-out hover:bg-surface-container-high text-on-surface-variant" href="about.html">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-label-caps text-label-caps">About</span>
+</a>
+</div>
+<div class="mt-auto border-t border-outline-variant pt-sm px-sm">
+<div class="flex items-center gap-md px-md py-sm mb-md rounded-lg">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional close-up of a senior industrial machine vision operator profile photo, wearing cleanroom attire, neutral background, sharp focus, cinematic soft lighting from the side." src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=">
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface">Admin</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Administrator</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-sm px-md py-sm text-error font-label-caps text-label-caps border border-error/20 hover:bg-error/5 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="logout">logout</span>
+                Logout
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 flex flex-col h-screen overflow-hidden bg-background">
+<!-- Top Header Anchor -->
+<header class="h-16 flex items-center justify-between px-xl border-b border-outline-variant/30 bg-surface/50 backdrop-blur-md">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary" data-icon="settings">settings</span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">System Settings</h2>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-sm bg-surface-container-low px-sm py-xs rounded-lg border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-status-pass animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">System Online</span>
+</div>
+<button class="pressed-state bg-secondary text-on-secondary px-lg py-sm rounded-lg font-label-caps text-label-caps shadow-sm hover:opacity-90 transition-all flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="save">save</span>
+                    Save Settings
+                </button>
+</div>
+</header>
+<!-- Scrollable Settings Container -->
+<div class="flex-1 overflow-y-auto p-xl custom-scrollbar">
+<div class="max-w-5xl mx-auto space-y-lg">
+<!-- Bento Grid for Settings Groups -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- 1. Appearance Section -->
+<section class="col-span-12 md:col-span-5 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm border-b border-outline-variant pb-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="palette">palette</span>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Appearance</h3>
+</div>
+<div class="space-y-md mt-sm">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-body-md font-semibold text-on-surface">Density</p>
+<p class="text-[12px] text-on-surface-variant">Adjust UI component spacing.</p>
+</div>
+<select class="bg-surface-container-low border-outline-variant text-[12px] rounded-lg px-sm py-xs font-data-mono">
+<option>Industrial (Tight)</option>
+<option>Standard</option>
+<option>Relaxed</option>
+</select>
+</div>
+</div>
+</section>
+<!-- 2. Inspection Section -->
+<section class="col-span-12 md:col-span-7 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm border-b border-outline-variant pb-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="settings_input_component">settings_input_component</span>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Inspection Workflow</h3>
+</div>
+<div class="grid grid-cols-2 gap-lg mt-sm">
+<div class="space-y-sm">
+<label class="block font-body-md font-semibold text-on-surface">Default PCB Type</label>
+<select class="w-full bg-surface-container-low border-outline-variant text-[12px] rounded-lg px-sm py-sm font-data-mono">
+<option>FR4-MULTILAYER-V3</option>
+<option>RIGID-FLEX-GOLD</option>
+<option>HIGH-FREQ-SDR</option>
+</select>
+</div>
+<div class="space-y-sm">
+<label class="block font-body-md font-semibold text-on-surface">Auto-Ingest</label>
+<div class="flex items-center gap-md py-sm">
+<div class="relative inline-block w-10 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-2 border-outline-variant appearance-none cursor-pointer transition-transform translate-x-5 border-secondary bg-secondary" id="toggle-ingest" name="toggle" type="checkbox">
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-secondary cursor-pointer" for="toggle-ingest"></label>
+</div>
+<span class="text-[12px] font-label-caps text-status-pass">ENABLED</span>
+</div>
+</div>
+<div class="col-span-2 space-y-sm">
+<label class="block font-body-md font-semibold text-on-surface">Watch-folder Path</label>
+<div class="flex items-center gap-sm">
+<input class="flex-1 bg-surface-container-low border-outline-variant text-[12px] rounded-lg px-sm py-sm font-data-mono text-on-surface-variant" type="text" value="/mnt/nas/aoi-raw-data/incoming/">
+<button class="pressed-state px-md py-sm border border-outline-variant bg-surface rounded-lg font-label-caps text-label-caps hover:bg-surface-container-high transition-all">BROWSE</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. AI Fusion Logic (Read-only) -->
+<section class="col-span-12 md:col-span-4 bg-surface-container-low border border-outline-variant/50 rounded-xl p-lg flex flex-col gap-md opacity-90">
+<div class="flex items-center justify-between border-b border-outline-variant pb-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="psychology">psychology</span>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">AI Fusion Logic</h3>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant/50" data-icon="lock">lock</span>
+</div>
+<div class="mt-sm space-y-lg">
+<div class="space-y-xs">
+<div class="flex justify-between items-end">
+<span class="text-[11px] font-label-caps text-on-surface-variant uppercase">Agreement Floor (match %)</span>
+<span class="font-data-mono text-secondary text-headline-md">70%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 70%"></div>
+</div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between items-end">
+<span class="text-[11px] font-label-caps text-on-surface-variant uppercase">Disagreement Bar (match %)</span>
+<span class="font-data-mono text-secondary text-headline-md">30%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 30%"></div>
+</div>
+</div>
+<p class="text-[11px] italic text-on-surface-variant leading-tight">These parameters are managed by Vision Core and cannot be altered by operator.</p>
+</div>
+</section>
+<!-- 4. Connectivity Section -->
+<section class="col-span-12 md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm border-b border-outline-variant pb-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="lan">lan</span>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Connectivity</h3>
+</div>
+<div class="grid grid-cols-3 gap-md mt-sm">
+<div class="space-y-sm">
+<label class="block font-body-sm font-semibold text-on-surface">Host Address</label>
+<input class="w-full bg-surface-container-low border-outline-variant text-[12px] rounded-lg px-sm py-sm font-data-mono" type="text" value="ETS-AOI-900">
+</div>
+<div class="space-y-sm">
+<label class="block font-body-sm font-semibold text-on-surface">Port</label>
+<input class="w-full bg-surface-container-low border-outline-variant text-[12px] rounded-lg px-sm py-sm font-data-mono" type="text" value="8443">
+</div>
+<div class="space-y-sm">
+<label class="block font-body-sm font-semibold text-on-surface">Network Layer</label>
+<select class="w-full bg-surface-container-low border-outline-variant text-[12px] rounded-lg px-sm py-sm font-data-mono">
+<option>Isolated VLAN-4</option>
+<option>Corporate Mesh</option>
+<option>Direct Fiber</option>
+</select>
+</div>
+<div class="col-span-3 flex items-center justify-between bg-surface-container-low p-sm rounded-lg border border-outline-variant/50">
+<div class="flex items-center gap-md">
+<div class="p-xs bg-status-pass/10 rounded">
+<span class="material-symbols-outlined text-status-pass text-[18px]" data-icon="check_circle">check_circle</span>
+</div>
+<span class="text-[12px] font-body-md text-on-surface-variant">Connected to ETS-AOI-900 (Latency: 1.4ms)</span>
+</div>
+<button class="pressed-state text-secondary font-label-caps text-label-caps px-md py-xs border border-secondary/20 hover:bg-secondary/5 rounded transition-all">RE-TEST</button>
+</div>
+</div>
+</section>
+<!-- 5. Notifications Section -->
+<section class="col-span-12 md:col-span-6 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm border-b border-outline-variant pb-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="notifications">notifications</span>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Notifications &amp; Alarms</h3>
+</div>
+<div class="space-y-md mt-sm">
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors group">
+<div class="flex items-center gap-md">
+<span class="w-2 h-2 rounded-full bg-status-missed-defect"></span>
+<div>
+<p class="font-body-md font-semibold text-on-surface">Missed Defect Alarm</p>
+<p class="text-[12px] text-on-surface-variant">Audible alert on machine floor when CRITICAL_FAIL is missed.</p>
+</div>
+</div>
+<div class="relative inline-block w-8 h-4 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-4 h-4 rounded-full bg-white border-2 border-outline-variant appearance-none cursor-pointer translate-x-4 border-secondary bg-secondary" id="n1" type="checkbox">
+<label class="toggle-label block overflow-hidden h-4 rounded-full bg-secondary cursor-pointer" for="n1"></label>
+</div>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-md">
+<span class="w-2 h-2 rounded-full bg-status-review"></span>
+<div>
+<p class="font-body-md font-semibold text-on-surface">Review Threshold Alert</p>
+<p class="text-[12px] text-on-surface-variant">Push notification when review queue exceeds 50 units.</p>
+</div>
+</div>
+<div class="relative inline-block w-8 h-4 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-4 h-4 rounded-full bg-white border-2 border-outline-variant appearance-none cursor-pointer border-outline-variant" id="n2" type="checkbox">
+<label class="toggle-label block overflow-hidden h-4 rounded-full bg-surface-container-highest cursor-pointer" for="n2"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Data Section -->
+<section class="col-span-12 md:col-span-6 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm border-b border-outline-variant pb-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="database">database</span>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Data Management</h3>
+</div>
+<div class="space-y-sm mt-sm">
+<div class="flex items-center justify-between">
+<span class="font-body-md font-semibold text-on-surface">Retention Policy</span>
+<select class="bg-surface-container-low border-outline-variant text-[11px] rounded-lg px-sm py-xs font-label-caps">
+<option>90 DAYS (STRICT)</option>
+<option>180 DAYS</option>
+<option>UNLIMITED (S3-BACKED)</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-sm pt-md">
+<button class="pressed-state flex items-center justify-center gap-sm bg-surface border border-outline-variant py-sm rounded-lg font-label-caps text-label-caps hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                                    EXPORT LOGS
+                                </button>
+<button class="pressed-state flex items-center justify-center gap-sm border border-error/30 text-error py-sm rounded-lg font-label-caps text-label-caps hover:bg-error/5">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete_sweep">delete_sweep</span>
+                                    CLEAR HISTORY
+                                </button>
+</div>
+</div>
+</section>
+<!-- 7. Account Management -->
+<section class="col-span-12 bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md mb-xl">
+<div class="flex items-center gap-sm border-b border-outline-variant pb-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="manage_accounts">manage_accounts</span>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Account &amp; Operator Management</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl mt-sm">
+<div class="space-y-md">
+<p class="font-body-md font-semibold text-on-surface">Operator Privileges</p>
+<div class="space-y-sm">
+<div class="flex items-center justify-between bg-surface-container-low p-md rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-[14px]">A</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface">Admin</p>
+<p class="text-[10px] text-on-surface-variant font-data-mono">SUPER_ADMIN</p>
+</div>
+</div>
+<button class="text-secondary font-label-caps text-[10px] hover:underline">MANAGE</button>
+</div>
+<button class="w-full flex items-center justify-center gap-sm border-2 border-dashed border-outline-variant py-md rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_circle">add_circle</span>
+<span class="font-label-caps text-label-caps">PROVISION NEW OPERATOR</span>
+</button>
+</div>
+</div>
+<div class="space-y-md">
+<p class="font-body-md font-semibold text-on-surface">Security</p>
+<div class="bg-surface-container-low p-md rounded-lg border border-outline-variant/30 space-y-md">
+<div class="space-y-xs">
+<label class="block text-[11px] font-label-caps text-on-surface-variant">CURRENT PASSWORD</label>
+<input class="w-full bg-surface border-outline-variant rounded p-sm font-data-mono text-[14px]" type="password" value="••••••••••••">
+</div>
+<button class="w-full pressed-state bg-primary text-on-primary py-sm rounded-lg font-label-caps text-label-caps shadow-lg hover:opacity-90">CHANGE PASSWORD</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Sticky Status Bar -->
+<footer class="h-10 bg-surface-container-lowest border-t border-outline-variant flex items-center justify-between px-md">
+<div class="flex gap-md">
+<span class="font-data-mono text-[10px] text-on-surface-variant">BUILD: v4.22.9-STABLE</span>
+<span class="font-data-mono text-[10px] text-on-surface-variant uppercase">Local Machine Time: 14:42:01 UTC</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-caps text-[10px] text-on-surface-variant">Last Saved: 12 minutes ago</span>
+<span class="material-symbols-outlined text-[14px] text-status-pass" data-icon="cloud_done">cloud_done</span>
+</div>
+</footer>
+</main>
+<!-- Success Notification (Hidden by default) -->
+<div class="fixed bottom-lg right-lg bg-inverse-surface text-inverse-on-surface px-lg py-md rounded-xl shadow-2xl border border-outline translate-y-32 transition-transform duration-300 ease-out z-[100] flex items-center gap-md" id="save-toast">
+<div class="w-10 h-10 rounded-full bg-status-pass/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-status-pass" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps">SYSTEM UPDATED</p>
+<p class="text-[12px] opacity-80">Settings deployed to ETS-AOI-900 successfully.</p>
+</div>
+</div>
+<script>
+        // Simple Interaction logic
+        const saveBtn = document.querySelector('button.bg-secondary');
+        const toast = document.getElementById('save-toast');
+
+        saveBtn.addEventListener('click', () => {
+            // Show toast
+            toast.classList.remove('translate-y-32');
+            toast.classList.add('translate-y-0');
+            
+            // Interaction feedback
+            saveBtn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin" data-icon="sync">sync</span> DEPLOYING...`;
+            saveBtn.disabled = true;
+            saveBtn.style.opacity = '0.7';
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-32');
+                toast.classList.remove('translate-y-0');
+                saveBtn.innerHTML = `<span class="material-symbols-outlined text-[18px]" data-icon="save">save</span> Save Settings`;
+                saveBtn.disabled = false;
+                saveBtn.style.opacity = '1';
+            }, 3000);
+        });
+    </script>
+</body></html>

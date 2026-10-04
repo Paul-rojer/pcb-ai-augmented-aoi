@@ -1,0 +1,347 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Support Hub | AOI PRO Industrial Suite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(198, 198, 198, 0.5);
+        }
+        .pressed-state:active {
+            transform: translateY(1px);
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#dbdad9",
+                      "surface": "#fbf9f9",
+                      "primary-fixed": "#d8e2ff",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#3f4759",
+                      "primary-container": "#d8e2ff",
+                      "secondary-container": "#dae2f9",
+                      "primary": "#325da8",
+                      "on-tertiary-fixed-variant": "#583e5b",
+                      "tertiary-fixed-dim": "#debbdf",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#777777",
+                      "surface-container-low": "#f5f3f3",
+                      "secondary": "#565e71",
+                      "outline-variant": "#c6c6c6",
+                      "on-primary-fixed": "#001a42",
+                      "on-surface-variant": "#474747",
+                      "tertiary-fixed": "#fcd7fc",
+                      "on-secondary-fixed": "#131b2c",
+                      "on-primary-container": "#11448e",
+                      "on-tertiary-fixed": "#29132d",
+                      "inverse-surface": "#303031",
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#3f4759",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed-dim": "#bec6dd",
+                      "on-tertiary-container": "#583e5b",
+                      "on-secondary": "#ffffff",
+                      "surface-container-high": "#e9e8e7",
+                      "surface-container-highest": "#e3e2e2",
+                      "surface-container": "#efeded",
+                      "tertiary-container": "#fcd7fc",
+                      "on-background": "#1b1c1c",
+                      "on-surface": "#1b1c1c",
+                      "tertiary": "#715574",
+                      "inverse-on-surface": "#f2f0f0",
+                      "background": "#fbf9f9",
+                      "inverse-primary": "#aec6ff",
+                      "surface-bright": "#fbf9f9",
+                      "secondary-fixed": "#dae2f9",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e3e2e2",
+                      "primary-fixed-dim": "#aec6ff",
+                      "surface-tint": "#325da8",
+                      "on-primary-fixed-variant": "#11448e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "base": "4px",
+                      "sm": "8px",
+                      "md": "16px",
+                      "xl": "40px",
+                      "margin": "16px",
+                      "gutter": "12px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "label-caps": ["JetBrains Mono"],
+                      "data-mono": ["JetBrains Mono"],
+                      "headline-md": ["Hanken Grotesk"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "body-sm": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "label-caps": ["11px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                      "data-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-lg": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style id="aoi-font-inter">:where(h1,h2,h3,h4,h5,h6,p,span,a,button,div,td,th,label,input,select,option,li,pre,code,strong,small,em){font-family:'Inter',sans-serif !important;}.material-symbols-outlined{font-family:'Material Symbols Outlined' !important;}</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-lg py-sm max-w-7xl mx-auto">
+<div class="flex items-center gap-md">
+<a href="index.html" title="Home"><img alt="AOI PRO Logo" class="h-12 w-auto object-contain" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4="></a>
+<span class="font-display-lg text-display-lg font-bold text-primary opacity-90 tracking-tight">AOI PRO</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="index.html">Product</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="resources.html">Resources</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="support.html">Support</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Company</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="bg-primary text-on-primary font-bold py-sm px-md rounded-lg pressed-state transition-all hover:bg-on-primary-fixed-variant">
+                    Sign In / Account
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-lg py-xl space-y-xl">
+<!-- Hero & Support Hub Search -->
+<section class="text-center space-y-md">
+<div class="inline-flex items-center gap-sm bg-secondary-container px-md py-xs rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-label-caps text-on-secondary-container uppercase tracking-wider">All Systems Operational</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface max-w-3xl mx-auto">Precision Support for High-Stakes Inspection</h1>
+<p class="text-on-surface-variant font-body-md max-w-xl mx-auto">Access technical documentation, engineering resources, and hardware specifications for your AOI PRO deployment.</p>
+<div class="max-w-2xl mx-auto pt-md relative">
+<span class="material-symbols-outlined absolute left-4 top-[54px] text-outline">search</span>
+<input class="w-full pl-12 pr-md py-md bg-surface-container-low border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none font-data-mono text-data-mono transition-all" placeholder="Search documentation, error codes, or hardware IDs..." type="text">
+</div>
+</section>
+<!-- Category Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="glass-card p-md rounded-lg hover:shadow-lg transition-shadow cursor-pointer group">
+<div class="w-10 h-10 bg-primary-container text-on-primary-container rounded flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Getting Started</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Setup procedures for core laboratory instrument clusters.</p>
+</div>
+<div class="glass-card p-md rounded-lg hover:shadow-lg transition-shadow cursor-pointer group">
+<div class="w-10 h-10 bg-secondary-container text-on-secondary-container rounded flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">api</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">API Docs</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Integration endpoints for automated telemetry streams.</p>
+</div>
+<div class="glass-card p-md rounded-lg hover:shadow-lg transition-shadow cursor-pointer group">
+<div class="w-10 h-10 bg-tertiary-container text-on-tertiary-container rounded flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Machine Calibration</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Optical alignment and sensor sensitivity tuning guides.</p>
+</div>
+<div class="glass-card p-md rounded-lg hover:shadow-lg transition-shadow cursor-pointer group">
+<div class="w-10 h-10 bg-surface-container-highest text-on-surface rounded flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Hardware Support</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Component swap-out guides and circuit diagnostics.</p>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-xl pt-md">
+<!-- Contact Engineering Support Form -->
+<section class="lg:col-span-2 bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm space-y-lg">
+<div class="flex items-center gap-md border-b border-outline-variant pb-md">
+<span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Contact Engineering Support</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Priority ticket creation for industrial instrument failures.</p>
+</div>
+</div>
+<form class="space-y-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Full Name</label>
+<input class="w-full bg-surface border border-outline-variant p-sm rounded-lg font-data-mono text-data-mono outline-none focus:border-primary" placeholder="Engineer Name" type="text">
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Serial Number</label>
+<input class="w-full bg-surface border border-outline-variant p-sm rounded-lg font-data-mono text-data-mono outline-none focus:border-primary" placeholder="AOI-PRO-XXXX" type="text">
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Email Address</label>
+<input class="w-full bg-surface border border-outline-variant p-sm rounded-lg font-data-mono text-data-mono outline-none focus:border-primary" placeholder="karry.29paul@gmail.com" type="email">
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Issue Description</label>
+<textarea class="w-full bg-surface border border-outline-variant p-sm rounded-lg font-data-mono text-data-mono outline-none focus:border-primary resize-none" placeholder="Describe the telemetry anomaly or hardware fault..." rows="4"></textarea>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary font-bold py-md px-xl rounded-lg pressed-state transition-all flex items-center justify-center gap-sm hover:shadow-lg" type="submit">
+                        Submit Support Ticket
+                        <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</section>
+<!-- Troubleshooting FAQ -->
+<section class="space-y-md">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined">live_help</span>
+                    Troubleshooting
+                </h2>
+<div class="space-y-sm">
+<details class="group bg-surface-container-low border border-outline-variant rounded-lg p-md cursor-pointer open:ring-1 open:ring-primary transition-all">
+<summary class="flex justify-between items-center list-none font-bold text-on-surface">
+<span class="">Network latency anomalies</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-sm text-body-sm text-on-surface-variant font-body-sm">
+                            Verify that your local laboratory gateway is configured for 10Gbps throughput. Check that packet priority is set to 'High' for the AOI PRO inference streams.
+                        </div>
+</details>
+<details class="group bg-surface-container-low border border-outline-variant rounded-lg p-md cursor-pointer open:ring-1 open:ring-primary transition-all">
+<summary class="flex justify-between items-center list-none font-bold text-on-surface">
+<span class="">Inference lagging (Critical)</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-sm text-body-sm text-on-surface-variant font-body-sm">
+                            This typically indicates GPU thermal throttling. Inspect cooling intake filters and ensure environmental temperature is below 24°C (75°F).
+                        </div>
+</details>
+<details class="group bg-surface-container-low border border-outline-variant rounded-lg p-md cursor-pointer open:ring-1 open:ring-primary transition-all">
+<summary class="flex justify-between items-center list-none font-bold text-on-surface">
+<span class="">False-Positive drift</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-sm text-body-sm text-on-surface-variant font-body-sm">
+                            Perform a recalibration of the optical sensor using the standard 12-point reference grid. Drift often occurs after intense vibration cycles.
+                        </div>
+</details>
+<details class="group bg-surface-container-low border border-outline-variant rounded-lg p-md cursor-pointer open:ring-1 open:ring-primary transition-all">
+<summary class="flex justify-between items-center list-none font-bold text-on-surface">
+<span class="">API Authorization errors</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-sm text-body-sm text-on-surface-variant font-body-sm">
+                            Ensure your Bearer tokens are rotated every 72 hours. Check the engineering dashboard for expiring credentials.
+                        </div>
+</details>
+</div>
+<div class="bg-surface-dim p-md rounded-lg border-l-4 border-primary">
+<p class="font-body-sm text-on-surface-variant flex gap-sm">
+<span class="material-symbols-outlined text-primary">info</span>
+                        Cannot find what you're looking for? Our documentation is updated daily with new diagnostic routines.
+                    </p>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-xl w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-md mb-md md:mb-0">
+<img alt="AOI PRO Footer Logo" class="h-16 w-16 object-contain opacity-40 grayscale" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=">
+<div class="flex flex-col">
+<span class="font-display-lg text-display-lg font-bold text-on-surface-variant opacity-20 leading-none">AOI PRO</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-50 tracking-widest mt-1">AOI PRO</span>
+</div>
+</div>
+<div class="flex flex-wrap justify-center gap-md mb-md md:mb-0">
+<a class="text-on-surface-variant font-body-sm hover:text-primary transition-colors" href="index.html">Product</a>
+<a class="text-on-surface-variant font-body-sm hover:text-primary transition-colors" href="resources.html">Resources</a>
+<a class="text-primary font-body-sm underline" href="support.html">Support</a>
+<a class="text-on-surface-variant font-body-sm hover:text-primary transition-colors" href="#">Company</a>
+<a class="text-on-surface-variant font-body-sm hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-body-sm hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="text-center md:text-right"><div class="flex justify-center md:justify-end gap-md mb-sm">
+    <a href="#" class="text-on-surface-variant opacity-50 hover:opacity-100 hover:text-primary transition-all">
+        <span class="material-symbols-outlined">video_library</span>
+    </a>
+    <a href="#" class="text-on-surface-variant opacity-50 hover:opacity-100 hover:text-primary transition-all">
+        <span class="material-symbols-outlined">photo_camera</span>
+    </a>
+    <a href="#" class="text-on-surface-variant opacity-50 hover:opacity-100 hover:text-primary transition-all">
+        <span class="material-symbols-outlined">work</span>
+    </a>
+</div>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant max-w-xs">
+                    © 2026 Paul Rojer R. · AOI PRO
+                </p>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for form submission and status
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Sending Ticket...';
+            btn.classList.add('opacity-50', 'pointer-events-none');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Ticket Received';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-green-600', 'opacity-50', 'pointer-events-none');
+                    btn.classList.add('bg-primary');
+                    e.target.reset();
+                }, 3000);
+            }, 1500);
+        });
+
+        // Search bar hover glow effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.01]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.01]');
+        });
+    </script>
+
+
+<script>/*nav-helper-injected*/
+document.querySelectorAll('button').forEach(function(b){
+  var t=(b.textContent||'').trim().toLowerCase();
+  if(t.indexOf('sign in')>-1||t.indexOf('get started')>-1||t.indexOf('account')>-1||t.indexOf('sign up')>-1)
+    b.addEventListener('click',function(){location.href='login.html';});
+});
+</script>
+</body></html>

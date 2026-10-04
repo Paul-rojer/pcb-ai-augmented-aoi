@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# App runtime data
+app/backend/inspection_history.csv
+app/backend/inspection_history.csv.old
+uploads/
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build artifacts / large bundles (not for the repo)
+*.zip
+vendor/

@@ -1,0 +1,246 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Operator Login | AOI PRO</title>
+<!-- Google Fonts: Hanken Grotesk & Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#3f4759",
+                    "surface": "#fbf9f9",
+                    "secondary-fixed": "#dae2f9",
+                    "outline-variant": "#c6c6c6",
+                    "surface-container-high": "#e9e8e7",
+                    "on-secondary-fixed": "#131b2c",
+                    "surface-container-low": "#f5f3f3",
+                    "surface-variant": "#e3e2e2",
+                    "primary-fixed-dim": "#aec6ff",
+                    "tertiary-container": "#fcd7fc",
+                    "on-primary-fixed-variant": "#11448e",
+                    "surface-container": "#efeded",
+                    "outline": "#777777",
+                    "inverse-surface": "#303031",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#d8e2ff",
+                    "primary": "#325da8",
+                    "inverse-primary": "#aec6ff",
+                    "on-tertiary-fixed": "#29132d",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#583e5b",
+                    "secondary": "#565e71",
+                    "on-surface-variant": "#474747",
+                    "secondary-container": "#dae2f9",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#fcd7fc",
+                    "on-tertiary-container": "#583e5b",
+                    "on-primary-fixed": "#001a42",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#3f4759",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#debbdf",
+                    "tertiary": "#715574",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#fbf9f9",
+                    "surface-dim": "#dbdad9",
+                    "primary-container": "#d8e2ff",
+                    "background": "#fbf9f9",
+                    "on-background": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f2f0f0",
+                    "surface-container-highest": "#e3e2e2",
+                    "surface-tint": "#325da8",
+                    "secondary-fixed-dim": "#bec6dd",
+                    "on-surface": "#1b1c1c",
+                    "on-primary-container": "#11448e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "40px",
+                    "margin": "16px",
+                    "gutter": "12px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "data-mono": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["JetBrains Mono"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "data-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                    "display-lg": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fbf9f9; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        .pressed-state:active {
+            transform: translateY(1px);
+        }
+        .industrial-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style id="aoi-font-inter">:where(h1,h2,h3,h4,h5,h6,p,span,a,button,div,td,th,label,input,select,option,li,pre,code,strong,small,em){font-family:'Inter',sans-serif !important;}.material-symbols-outlined{font-family:'Material Symbols Outlined' !important;}</style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- Top Navigation Bar (Simplified for Login) -->
+<header class="w-full top-0 sticky bg-surface border-b border-outline-variant z-50">
+<div class="flex justify-between items-center px-lg py-sm max-w-[1440px] mx-auto h-20">
+<div class="flex items-center gap-md">
+<a href="index.html" title="Home"><img alt="AOI PRO Logo" class="h-14 w-auto object-contain" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4="></a>
+<span class="font-display-lg text-headline-md font-bold text-primary">AOI PRO</span>
+</div>
+<div class="hidden md:flex items-center gap-lg">
+<div class="flex items-center gap-xs px-sm py-xs bg-surface-container-low rounded-lg border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">System Status: Online</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center p-md relative overflow-hidden">
+<!-- Atmospheric Background Element -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-secondary rounded-full blur-[100px]"></div>
+</div>
+<div class="w-full max-w-md z-10">
+<!-- Login Container (Industrial Card) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl industrial-shadow p-lg overflow-hidden relative">
+<!-- Branding Accent -->
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="mb-lg">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-xs">Operator Login</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Access the PCB Optical Inspection — Decision Support</p>
+</div>
+<form class="space-y-md" onsubmit="event.preventDefault();">
+<!-- Operator ID Field -->
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase ml-1" for="operator-id">Operator ID / Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">badge</span>
+<input class="w-full pl-10 pr-md py-3 bg-surface-container-low border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-data-mono text-data-mono" id="operator-id" placeholder="OP-0000000" type="text">
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center px-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="password">Password</label>
+<a class="font-label-caps text-label-caps text-primary hover:underline" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">lock</span>
+<input class="w-full pl-10 pr-md py-3 bg-surface-container-low border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-data-mono text-data-mono" id="password" placeholder="••••••••" type="password">
+</div>
+</div>
+<!-- Checkbox -->
+<div class="flex items-center gap-sm">
+<input class="w-4 h-4 text-primary border-outline rounded focus:ring-primary" id="remember" type="checkbox">
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer select-none" for="remember">Keep me logged in</label>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary text-on-primary py-lg rounded-lg font-headline-md text-body-md font-bold uppercase tracking-wider pressed-state hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-colors flex items-center justify-center gap-sm" type="submit">
+<span class="">Initialize Session</span>
+<span class="material-symbols-outlined">login</span>
+</button>
+</form>
+<!-- Footer Context -->
+<div class="mt-lg pt-md border-t border-outline-variant text-center">
+<p class="font-body-sm text-body-sm text-outline">
+                        Authorized Personnel Only. All session data is logged and monitored for quality assurance.
+                    </p>
+</div>
+</div>
+<!-- Mobile Only System Status -->
+<div class="mt-md md:hidden flex justify-center">
+<div class="flex items-center gap-xs px-sm py-xs bg-surface-container rounded-full border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">SYSTEM ONLINE</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant mt-auto mt-lg">
+<div class="max-w-[1440px] mx-auto px-lg py-md flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex items-center gap-md">
+<img alt="AOI PRO Footer Logo" class="h-10 w-auto opacity-80" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=">
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md font-bold text-secondary">AOI PRO</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant uppercase tracking-widest">© 2026 Paul Rojer R. · AOI PRO</span>
+</div>
+</div>
+<nav class="flex items-center gap-lg">
+<a class="font-body-sm text-body-sm text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-secondary-fixed-variant hover:text-primary transition-colors" href="resources.html">Documentation</a>
+<a class="font-body-sm text-body-sm text-on-secondary-fixed-variant hover:text-primary transition-colors" href="support.html">Support</a>
+</nav>
+</div>
+</footer>
+<script>
+        // Micro-interactions for login button
+        const loginBtn = document.querySelector('button[type="submit"]');
+        if (loginBtn) {
+            loginBtn.addEventListener('mousedown', () => {
+                loginBtn.style.transform = 'translateY(1px)';
+            });
+            loginBtn.addEventListener('mouseup', () => {
+                loginBtn.style.transform = 'translateY(0)';
+            });
+        }
+
+        // Simple validation visualization
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.parentElement.classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.parentElement.classList.remove('text-primary');
+            });
+        });
+    </script>
+
+
+<script>/*nav-helper-injected*/
+var _f=document.querySelector('form');
+if(_f)_f.addEventListener('submit',function(){setTimeout(function(){location.href='inspection.html';},120);});
+var _su=Array.from(document.querySelectorAll('a,button')).find(function(e){return (e.textContent||'').toLowerCase().indexOf('sign up')>-1;});
+</script>
+</body></html>

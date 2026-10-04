@@ -1,0 +1,378 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AOI PRO — PCB Optical Inspection Decision Support</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dbdad9",
+                        "surface": "#fbf9f9",
+                        "primary-fixed": "#d8e2ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#3f4759",
+                        "primary-container": "#d8e2ff",
+                        "secondary-container": "#dae2f9",
+                        "primary": "#325da8",
+                        "on-tertiary-fixed-variant": "#583e5b",
+                        "tertiary-fixed-dim": "#debbdf",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#777777",
+                        "surface-container-low": "#f5f3f3",
+                        "secondary": "#565e71",
+                        "outline-variant": "#c6c6c6",
+                        "on-primary-fixed": "#001a42",
+                        "on-surface-variant": "#474747",
+                        "tertiary-fixed": "#fcd7fc",
+                        "on-secondary-fixed": "#131b2c",
+                        "on-primary-container": "#11448e",
+                        "on-tertiary-fixed": "#29132d",
+                        "inverse-surface": "#303031",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#3f4759",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#bec6dd",
+                        "on-tertiary-container": "#583e5b",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e9e8e7",
+                        "surface-container-highest": "#e3e2e2",
+                        "surface-container": "#efeded",
+                        "tertiary-container": "#fcd7fc",
+                        "on-background": "#1b1c1c",
+                        "on-surface": "#1b1c1c",
+                        "tertiary": "#715574",
+                        "inverse-on-surface": "#f2f0f0",
+                        "background": "#fbf9f9",
+                        "inverse-primary": "#aec6ff",
+                        "surface-bright": "#fbf9f9",
+                        "secondary-fixed": "#dae2f9",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e3e2e2",
+                        "primary-fixed-dim": "#aec6ff",
+                        "surface-tint": "#325da8",
+                        "on-primary-fixed-variant": "#11448e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xl": "40px",
+                        "margin": "16px",
+                        "gutter": "12px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["11px", {"lineHeight": "1.0", "fontWeight": "700"}],
+                        "data-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbf9f9;
+            color: #1b1c1c;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            font-size: 20px;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(198, 198, 198, 0.3);
+        }
+        .pressed-button:active {
+            transform: translateY(1px);
+        }
+        .indicator-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            box-shadow: 0 10px 30px -10px rgba(50, 93, 168, 0.1);
+            transform: translateY(-2px);
+        }
+    </style>
+<style id="aoi-font-inter">:where(h1,h2,h3,h4,h5,h6,p,span,a,button,div,td,th,label,input,select,option,li,pre,code,strong,small,em){font-family:'Inter',sans-serif !important;}.material-symbols-outlined{font-family:'Material Symbols Outlined' !important;}</style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-lg py-sm max-w-7xl mx-auto">
+<div class="flex items-center gap-md">
+<a href="index.html" title="Home"><img alt="AOI PRO Logo" class="h-14 w-auto object-contain" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4="></a>
+<span class="font-display-lg text-headline-md font-bold text-primary opacity-90">AOI PRO</span>
+</div>
+<nav class="hidden md:flex items-center gap-xl">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-sm" href="index.html">Product</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-body-sm" href="resources.html">Resources</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-body-sm" href="support.html">Support</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-body-sm" href="#">Company</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="pressed-button px-md py-sm bg-primary text-on-primary font-bold rounded-lg text-body-sm hover:bg-primary-container hover:text-on-primary-container transition-all">
+                    Sign In / Account
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-lg py-xl max-w-7xl mx-auto overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="z-10">
+<div class="inline-flex items-center gap-sm px-sm py-xs bg-primary-container text-on-primary-container rounded-full mb-md">
+<span class="indicator-dot bg-primary animate-pulse"></span>
+<span class="font-label-caps text-label-caps">V4.2 LIVE: NEURAL CALIBRATION ACTIVE</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight mb-md">
+                        Precision AI for <span class="text-primary">High-Stakes</span> Manufacturing
+                    </h1>
+<p class="font-body-md text-on-surface-variant mb-xl max-w-xl">
+                        AOI PRO is a decision-support layer for industrial PCB inspection. It registers each board to a golden reference, detects anomalies by unsupervised change detection, and fuses its verdict with the AOI machine — auto-clearing good boards and escalating only the uncertain ones to a human.
+                    </p>
+<div class="flex flex-wrap gap-md">
+<button class="pressed-button px-lg py-md bg-primary text-on-primary font-bold rounded-lg flex items-center gap-sm">
+                            Get Started
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="pressed-button px-lg py-md border border-outline-variant text-on-surface font-bold rounded-lg flex items-center gap-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">play_circle</span>
+                            Watch Demo
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full"></div>
+<div class="relative rounded-xl border border-outline-variant overflow-hidden shadow-2xl">
+<img class="w-full h-[500px] object-cover" data-alt="A professional close-up shot of a high-tech automated optical inspection machine working on a circuit board in a modern manufacturing facility. The lighting is crisp and cool-toned, reflecting off metallic surfaces and green PCBs. The depth of field is shallow, focusing on a robotic sensor head with bright white LED rings. The overall mood is precise, industrial, and high-stakes." src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=">
+<div class="absolute bottom-md left-md right-md glass-panel p-md rounded-lg flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary">LIVE TELEMETRY</span>
+<span class="font-data-mono text-data-mono">UNIT_ID: AOI_7749_BETA</span>
+</div>
+<div class="flex gap-sm">
+<span class="px-sm py-xs bg-error-container text-on-error-container rounded font-label-caps text-label-caps">FAIL</span>
+<span class="px-sm py-xs bg-secondary-container text-on-secondary-container rounded font-label-caps text-label-caps">REVIEW</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats / Social Proof -->
+<section class="bg-surface-container px-lg py-xl border-y border-outline-variant">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-lg text-center">
+<div class="flex flex-col gap-xs">
+<span class="font-display-lg text-primary text-display-lg">0.83</span>
+<span class="font-label-caps text-on-surface-variant">SEPARATION AUC</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-display-lg text-primary text-display-lg">~82%</span>
+<span class="font-label-caps text-on-surface-variant">AUTO-DECIDED</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-display-lg text-primary text-display-lg">0</span>
+<span class="font-label-caps text-on-surface-variant">GOOD BOARDS REJECTED</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-display-lg text-primary text-display-lg">0</span>
+<span class="font-label-caps text-on-surface-variant">DEFECTS AUTO-PASSED</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid -->
+<section class="px-lg py-xl max-w-7xl mx-auto">
+<div class="text-center mb-xl">
+<h2 class="font-headline-md text-display-lg mb-sm">Engineered for Precision</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">Our tri-tier analysis pipeline ensures maximum reliability across high-mix production lines.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Feature 1 -->
+<div class="bento-card p-lg bg-surface border border-outline-variant rounded-xl flex flex-col gap-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">speed</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md mb-sm">Registration &amp; ROI</h3>
+<p class="font-body-sm text-on-surface-variant">Each board is auto-cropped to remove conveyor rails, its type is detected, and it is aligned to a golden reference with ORB + ECC sub-pixel registration.</p>
+</div>
+<ul class="mt-auto space-y-sm">
+<li class="flex items-center gap-xs font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Auto board-type detection
+                        </li>
+<li class="flex items-center gap-xs font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Sub-pixel ECC alignment
+                        </li>
+</ul>
+</div>
+<!-- Feature 2 -->
+<div class="bento-card p-lg bg-primary text-on-primary rounded-xl flex flex-col gap-md">
+<div class="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">neurology</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md mb-sm text-white">Golden Change Detection</h3>
+<p class="font-body-sm text-white/80">Every board is compared to its golden reference with a per-pixel z-score anomaly map — catching localized defects and pinpointing them with a heatmap.</p>
+</div>
+<div class="mt-auto p-sm bg-white/10 rounded-lg">
+<span class="font-data-mono text-data-mono block mb-xs">SEPARATION AUC</span>
+<div class="w-full h-1.5 bg-white/20 rounded-full overflow-hidden">
+<div class="w-[83%] h-full bg-white transition-all duration-1000" style="width: 83%;"></div>
+</div>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bento-card p-lg bg-surface border border-outline-variant rounded-xl flex flex-col gap-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">tune</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md mb-sm">AOI + AI Consensus</h3>
+<p class="font-body-sm text-on-surface-variant">The AI verdict is fused with the AOI machine's call: both agree → auto PASS/FAIL; they disagree → routed to a human. Good boards are never auto-rejected.</p>
+</div>
+<ul class="mt-auto space-y-sm">
+<li class="flex items-center gap-xs font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Never auto-rejects good boards
+                        </li>
+<li class="flex items-center gap-xs font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Human review on disagreement
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-lg py-xl max-w-7xl mx-auto mb-xl">
+<div class="relative bg-inverse-surface rounded-xl p-xl overflow-hidden text-center md:text-left">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<div class="w-full h-full border-l border-b border-white rotate-12 transform origin-top-right"></div>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-xl">
+<div class="max-w-2xl">
+<h2 class="font-display-lg text-display-lg text-white mb-md">Ready to eliminate inspection bottlenecks?</h2>
+<p class="font-body-md text-white/70">Deploy AOI PRO in your facility and see the difference in 24 hours. Our engineers handle the integration from start to finish.</p>
+</div>
+<div class="flex shrink-0 gap-md">
+<button class="pressed-button px-lg py-md bg-white text-inverse-surface font-bold rounded-lg">Talk to Sales</button>
+<button class="pressed-button px-lg py-md border border-white/30 text-white font-bold rounded-lg hover:bg-white/10">Read Technical Spec</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant">
+<div class="max-w-7xl mx-auto px-lg py-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-xl mb-xl">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<img alt="AOI PRO Logo" class="h-8 w-auto" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4=">
+<span class="font-display-lg text-headline-md font-bold text-on-surface-variant opacity-80">AOI PRO</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">Golden-template PCB optical inspection with human-in-the-loop decision support.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-md">PRODUCT</h4>
+<ul class="flex flex-col gap-sm">
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="inspection.html">Inspection Models</a></li>
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Hardware Integration</a></li>
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="dashboard.html">Cloud Dashboard</a></li>
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Edge Computing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-md">RESOURCES</h4>
+<ul class="flex flex-col gap-sm">
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="resources.html">Documentation</a></li>
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">White Papers</a></li>
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Case Studies</a></li>
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Webinars</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-md">CONTACT</h4>
+<ul class="flex flex-col gap-sm">
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="support.html">Support Center</a></li>
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sales Inquiry</a></li>
+<li class=""><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Global Partners</a></li>
+<li class="flex gap-sm mb-sm"><span class="material-symbols-outlined text-on-surface-variant">location_on</span><span class="font-body-sm text-on-surface-variant">SASTRA Deemed University · EMS Lab, Thanjavur, India</span></li><li class="mt-md flex gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">mail</span>
+<span class="font-body-sm text-on-surface-variant">karry.29paul@gmail.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-lg border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-md">
+<span class="font-body-sm text-on-surface-variant">© 2026 Paul Rojer R. · AOI PRO</span>
+<div class="flex gap-lg">
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Terms of Service</a>
+</div><div class="flex gap-md ml-lg border-l border-outline-variant pl-lg"><a href="#" class="text-on-surface-variant hover:text-primary transition-colors" title="LinkedIn"><span class="material-symbols-outlined">brand_awareness</span></a><a href="#" class="text-on-surface-variant hover:text-primary transition-colors" title="Instagram"><span class="material-symbols-outlined">photo_camera</span></a><a href="#" class="text-on-surface-variant hover:text-primary transition-colors" title="YouTube"><span class="material-symbols-outlined">video_library</span></a></div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the model confidence bar
+        document.addEventListener('DOMContentLoaded', () => {
+            const bar = document.querySelector('.bg-white.transition-all');
+            if (bar) {
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = '98.4%';
+                }, 500);
+            }
+        });
+    </script>
+
+
+<script>/*nav-helper-injected*/
+document.querySelectorAll('button').forEach(function(b){
+  var t=(b.textContent||'').trim().toLowerCase();
+  if(t.indexOf('sign in')>-1||t.indexOf('get started')>-1||t.indexOf('account')>-1||t.indexOf('sign up')>-1)
+    b.addEventListener('click',function(){location.href='login.html';});
+});
+</script>
+</body></html>

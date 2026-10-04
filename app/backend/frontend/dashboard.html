@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AOI PRO | AOI PRO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;family=Jetbrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-dim": "#dadada",
+                        "on-primary-fixed-variant": "#12448f",
+                        error: "#ba1a1a",
+                        "surface-variant": "#e2e2e2",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "status-missed-defect": "#991B1B",
+                        "secondary-fixed": "#dbe2f9",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#3f4759",
+                        "on-primary-container": "#12448f",
+                        "surface-container-high": "#e8e8e8",
+                        "status-fail": "#EF4444",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-fixed-variant": "#583e5a",
+                        tertiary: "#715573",
+                        "on-secondary-fixed": "#141b2c",
+                        "outline-variant": "#c6c6c6",
+                        "on-background": "#1b1b1b",
+                        "on-surface": "#1b1b1b",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#dbe2f9",
+                        "on-secondary-container": "#3f4759",
+                        "status-pass": "#10B981",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#29132d",
+                        "status-uncertain": "#64748B",
+                        "surface-tint": "#335ca8",
+                        "text-light": "#111827",
+                        "tertiary-fixed-dim": "#dfbcdf",
+                        "background-dark": "#0F172A",
+                        outline: "#777777",
+                        "secondary-fixed-dim": "#bfc6dc",
+                        surface: "#f9f9f9",
+                        "surface-bright": "#f9f9f9",
+                        "primary-fixed": "#d8e2ff",
+                        "status-false-reject": "#6366F1",
+                        "surface-light": "#FFFFFF",
+                        "primary-container": "#d8e2ff",
+                        "tertiary-container": "#fcd7fb",
+                        "primary-fixed-dim": "#aec6ff",
+                        "surface-container-low": "#f3f3f3",
+                        "background-light": "#F3F4F6",
+                        primary: "#335ca8",
+                        "on-surface-variant": "#474747",
+                        "surface-dark": "#1E293B",
+                        "inverse-surface": "#303030",
+                        background: "#f9f9f9",
+                        "on-tertiary-container": "#583e5a",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#fcd7fb",
+                        "text-dark": "#F8FAFC",
+                        "status-review": "#F59E0B",
+                        "inverse-primary": "#aec6ff",
+                        "inverse-on-surface": "#f1f1f1",
+                        secondary: "#575e71",
+                        "on-primary-fixed": "#001a42"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        margin: "16px",
+                        md: "16px",
+                        xs: "4px",
+                        sm: "8px",
+                        xl: "40px",
+                        base: "4px",
+                        lg: "24px",
+                        gutter: "12px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "label-caps": ["JetBrains Mono"],
+                        headline: ["Hanken Grotesk"],
+                        display: ["Hanken Grotesk"],
+                        body: ["Inter"],
+                        label: ["Jetbrains Mono"]
+                    },
+                    fontSize: {
+                        "body-md": ["14px", {
+                            lineHeight: "1.5",
+                            fontWeight: "400"
+                        }],
+                        "body-sm": ["13px", {
+                            lineHeight: "1.4",
+                            fontWeight: "400"
+                        }],
+                        "headline-md": ["24px", {
+                            lineHeight: "1.3",
+                            fontWeight: "600"
+                        }],
+                        "display-lg": ["36px", {
+                            lineHeight: "1.2",
+                            letterSpacing: "-0.02em",
+                            fontWeight: "700"
+                        }],
+                        "data-mono": ["12px", {
+                            lineHeight: "1.0",
+                            letterSpacing: "0.02em",
+                            fontWeight: "500"
+                        }],
+                        "label-caps": ["11px", {
+                            lineHeight: "1.0",
+                            fontWeight: "700"
+                        }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .pressed-state:active {
+            transform: translateY(1px);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(70, 72, 212, 0.15);
+        }
+    </style>
+<style id="aoi-font-inter">:where(h1,h2,h3,h4,h5,h6,p,span,a,button,div,td,th,label,input,select,option,li,pre,code,strong,small,em){font-family:'Inter',sans-serif !important;}.material-symbols-outlined{font-family:'Material Symbols Outlined' !important;}</style>
+</head>
+<body class="bg-background text-on-surface font-body-md transition-colors duration-300">
+<!-- TopNavBar -->
+<nav class="bg-surface border-b border-outline-variant sticky top-0 z-50 flex justify-between items-center w-full px-md h-20">
+<div class="flex items-center gap-lg">
+<div class="h-16 flex items-center">
+<a href="index.html" title="Home"><img alt="AOI PRO Logo" class="h-14 w-auto object-contain" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4="></a>
+</div>
+<div class="hidden md:flex gap-md">
+<a class="font-body-md text-body-md text-secondary border-b-2 border-secondary h-20 flex items-center px-xs transition-colors" href="index.html">Product</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors h-20 flex items-center px-xs" href="resources.html">Resources</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors h-20 flex items-center px-xs" href="support.html">Support</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors h-20 flex items-center px-xs" href="#">Company</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="px-md py-sm bg-primary text-on-primary font-label-caps text-label-caps rounded-lg hover:opacity-90 pressed-state transition-all">
+                Sign In / Account
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-xl lg:pt-24 pb-16 bg-surface">
+<div class="max-w-[1440px] mx-auto px-md grid grid-cols-1 lg:grid-cols-12 gap-xl items-center">
+<div class="lg:col-span-7 space-y-lg">
+<div class="inline-flex items-center gap-sm px-sm py-xs bg-surface-container-highest rounded-full text-secondary font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                    NEXT-GEN DEFECT DETECTION
+                </div>
+<h1 class="font-display-lg text-[48px] lg:text-[64px] leading-tight text-primary max-w-2xl">
+                    Knows exactly when to <span class="text-secondary">trust automation</span> and when not to.
+                </h1>
+<p class="font-body-md text-lg text-on-surface-variant max-w-xl">
+                    AOI PRO serves as a specialized secondary AI verification layer for the ETS-AOI-900. By integrating calibrated decision outcomes, it eliminates human error and drastically reduces false rejects in high-precision PCB assembly.
+                </p>
+<div class="flex flex-wrap gap-md pt-md">
+<button class="px-lg py-md bg-secondary text-on-secondary rounded-lg font-headline-md text-headline-md pressed-state glow-hover transition-all">
+                        Get Started
+                    </button>
+<button class="px-lg py-md border border-outline text-primary rounded-lg font-headline-md text-headline-md hover:bg-surface-container flex items-center gap-sm transition-all">
+<span class="material-symbols-outlined">play_circle</span>
+                        Watch Demo
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative group">
+<div class="absolute -inset-4 bg-secondary/5 rounded-xl blur-2xl group-hover:bg-secondary/10 transition-all duration-500"></div>
+<div class="relative bg-white border border-outline-variant p-4 rounded-xl shadow-xl">
+<img alt="ETS-AOI-900 high-precision inspection system" class="w-full h-[600px] object-cover rounded-lg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4="/>
+<div class="absolute bottom-10 -left-10 bg-surface border border-outline-variant p-md rounded-lg shadow-lg max-w-[200px] animate-bounce">
+<div class="flex items-center gap-sm mb-xs">
+<span class="w-3 h-3 rounded-full bg-status-pass"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">POOL ACCURACY</span>
+</div>
+<div class="font-data-mono text-xl text-primary">86.7%</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Results Band -->
+<section class="bg-primary text-on-primary py-lg">
+<div class="max-w-[1440px] mx-auto px-md grid grid-cols-1 md:grid-cols-3 gap-lg text-center divide-y md:divide-y-0 md:divide-x divide-outline">
+<div class="py-md md:py-0 px-md">
+<div class="font-display-lg text-secondary-fixed mb-xs">0</div>
+<div class="font-label-caps text-label-caps tracking-widest uppercase opacity-80">unsafe automatic calls on test set</div>
+</div>
+<div class="py-md md:py-0 px-md">
+<div class="font-display-lg text-secondary-fixed mb-xs">0.83</div>
+<div class="font-label-caps text-label-caps tracking-widest uppercase opacity-80">Separation AUC · ~82% auto-decided</div>
+</div>
+<div class="py-md md:py-0 px-md">
+<div class="font-display-lg text-secondary-fixed mb-xs">6</div>
+<div class="font-label-caps text-label-caps tracking-widest uppercase opacity-80">Calibrated Decision Outcomes</div>
+</div>
+</div>
+</section>
+<!-- How It Works (Bento Grid) -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-md">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h2 class="font-display-lg text-display-lg text-primary mb-md">Engineered for Technical Precision</h2>
+<p class="font-body-md text-on-surface-variant">The AOI PRO framework operates as a failsafe architecture, ensuring that every board is scrutinized with mathematical certainty.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Step 1: Capture -->
+<div class="md:col-span-4 bg-surface border border-outline-variant p-lg rounded-xl flex flex-col gap-md glow-hover transition-all">
+<div class="w-12 h-12 bg-secondary-container flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container">photo_camera</span>
+</div>
+<div class="space-y-sm">
+<span class="font-data-mono text-secondary">01 / CAPTURE</span>
+<h3 class="font-headline-md text-headline-md text-primary">High-Speed Acquisition</h3>
+<p class="font-body-sm text-on-surface-variant">The ETS-AOI-900 captures 12-bit RAW imagery from multi-angle light sources at the speed of the line.</p>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant">
+<div class="font-data-mono text-[10px] text-on-surface-variant">SYSTEM STATUS: POLLING...</div>
+</div>
+</div>
+<!-- Step 2: AI Re-check -->
+<div class="md:col-span-8 bg-primary-container text-on-primary-container p-lg rounded-xl flex flex-col md:flex-row gap-lg items-center relative overflow-hidden group">
+<div class="relative z-10 flex flex-col gap-md md:w-1/2">
+<div class="w-12 h-12 bg-secondary flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-white">psychology</span>
+</div>
+<div class="space-y-sm">
+<span class="font-data-mono text-secondary-fixed-dim">02 / AI RE-CHECK</span>
+<h3 class="font-headline-md text-headline-md text-white">Secondary Neural Analysis</h3>
+<p class="font-body-sm opacity-80">The AOI PRO inference engine re-evaluates high-uncertainty regions using our proprietary ensemble models to confirm true defects.</p>
+</div>
+</div>
+<div class="md:w-1/2 relative z-10 grid grid-cols-2 gap-sm">
+<div class="bg-primary/20 border border-white/10 p-sm rounded-lg">
+<div class="w-2 h-2 rounded-full bg-status-fail mb-xs"></div>
+<div class="font-label-caps text-label-caps text-white">DEFECT DETECTED</div>
+</div>
+<div class="bg-primary/20 border border-white/10 p-sm rounded-lg opacity-50">
+<div class="w-2 h-2 rounded-full bg-status-pass mb-xs"></div>
+<div class="font-label-caps text-label-caps text-white">FALSE ALARM</div>
+</div>
+<div class="bg-secondary p-sm rounded-lg col-span-2">
+<div class="font-data-mono text-[10px] text-white">INFERENCE LOAD</div>
+<div class="h-1 bg-white/20 rounded-full mt-xs overflow-hidden">
+<div class="h-full bg-white w-2/3"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Confirm/Escalate -->
+<div class="md:col-span-12 lg:col-span-12 bg-surface-container border border-outline-variant p-lg rounded-xl flex flex-col md:flex-row justify-between items-center gap-lg">
+<div class="md:w-1/3">
+<div class="w-12 h-12 bg-white flex items-center justify-center rounded-lg mb-md border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-primary">fact_check</span>
+</div>
+<span class="font-data-mono text-secondary">03 / CONFIRM OR ESCALATE</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-xs">Decision Calibration</h3>
+<p class="font-body-sm text-on-surface-variant mt-sm">Choose from 6 outcome states. Decisions are either fully automated or routed to expert operators with prioritized risk weighting.</p>
+</div>
+<div class="md:w-2/3 grid grid-cols-2 md:grid-cols-6 gap-sm w-full">
+<div class="bg-surface-light border-l-4 border-status-pass p-sm flex flex-col justify-center items-center rounded text-center">
+<span class="font-label-caps text-label-caps text-status-pass">PASS</span>
+</div>
+<div class="bg-surface-light border-l-4 border-status-fail p-sm flex flex-col justify-center items-center rounded text-center">
+<span class="font-label-caps text-label-caps text-status-fail">FAIL</span>
+</div>
+<div class="bg-surface-light border-l-4 border-status-review p-sm flex flex-col justify-center items-center rounded text-center">
+<span class="font-label-caps text-label-caps text-status-review">REVIEW</span>
+</div>
+<div class="bg-surface-light border-l-4 border-status-uncertain p-sm flex flex-col justify-center items-center rounded text-center">
+<span class="font-label-caps text-label-caps text-status-uncertain">RE-WORK</span>
+</div>
+<div class="bg-surface-light border-l-4 border-status-false-reject p-sm flex flex-col justify-center items-center rounded text-center">
+<span class="font-label-caps text-label-caps text-status-false-reject">REJECT</span>
+</div>
+<div class="bg-surface-light border-l-4 border-status-missed-defect p-sm flex flex-col justify-center items-center rounded text-center">
+<span class="font-label-caps text-label-caps text-status-missed-defect">CRITICAL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant grid grid-cols-1 md:grid-cols-4 gap-lg px-xl py-xl w-full">
+<div class="flex flex-col gap-md">
+<div class="h-20 mb-md">
+<img alt="AOI PRO Logo" class="h-24 w-auto" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNDAnIGhlaWdodD0nNDAnPjxyZWN0IHdpZHRoPScxNDAnIGhlaWdodD0nNDAnIHJ4PSc2JyBmaWxsPScjMEI1RkZGJy8+PHRleHQgeD0nNzAnIHk9JzI2JyBmb250LWZhbWlseT0nU2Vnb2UgVUksQXJpYWwnIGZvbnQtc2l6ZT0nMTgnIGZvbnQtd2VpZ2h0PSc3MDAnIGZpbGw9JyNGRkZGRkYnIHRleHQtYW5jaG9yPSdtaWRkbGUnPkFPSSYjMTYwO1BSTzwvdGV4dD48L3N2Zz4="/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Pioneering the next era of industrial autonomy through high-fidelity computer vision and calibrated AI.
+            </p>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-auto">
+                © 2026 Paul Rojer R. · AOI PRO
+            </div>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="font-label-caps text-label-caps text-primary mb-xs">PRODUCTS</div>
+<a class="text-on-surface-variant hover:underline decoration-secondary transition-opacity opacity-90 hover:opacity-100" href="#">AOI PRO Engine</a>
+<a class="text-on-surface-variant hover:underline decoration-secondary transition-opacity opacity-90 hover:opacity-100" href="#">ETS-AOI-900 Integration</a>
+<a class="text-on-surface-variant hover:underline decoration-secondary transition-opacity opacity-90 hover:opacity-100" href="#">PCB/SMT Solutions</a>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="font-label-caps text-label-caps text-primary mb-xs">RESOURCES</div>
+<a class="text-on-surface-variant hover:underline decoration-secondary transition-opacity opacity-90 hover:opacity-100" href="resources.html">Whitepapers</a>
+<a class="text-on-surface-variant hover:underline decoration-secondary transition-opacity opacity-90 hover:opacity-100" href="resources.html">Documentation</a>
+<a class="text-on-surface-variant hover:underline decoration-secondary transition-opacity opacity-90 hover:opacity-100" href="#">API Reference</a>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="font-label-caps text-label-caps text-primary mb-xs">LEGAL</div>
+<a class="text-on-surface-variant hover:underline decoration-secondary transition-opacity opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:underline decoration-secondary transition-opacity opacity-90 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:underline decoration-secondary transition-opacity opacity-90 hover:opacity-100" href="settings.html">Cookie Settings</a>
+</div>
+</footer>
+<!-- Interactive script for demo elements -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.pressed-state');
+            buttons.forEach(btn => {
+                btn.addEventListener('mousedown', () => {
+                    btn.classList.add('opacity-80');
+                });
+                btn.addEventListener('mouseup', () => {
+                    btn.classList.remove('opacity-80');
+                });
+            });
+        });
+    </script>
+</body></html>

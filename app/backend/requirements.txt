@@ -1,0 +1,12 @@
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9
+pillow>=10.0
+numpy>=1.24
+opencv-python>=4.8
+# CNN inference (already what model_v5 uses). CPU build is fine — no GPU needed.
+torch>=2.0
+timm>=0.9
+# GradCAM (attention map) only:
+grad-cam>=1.4
+pandas>=2.0
