@@ -8,8 +8,9 @@
 ![FPGA](https://img.shields.io/badge/FPGA-Cyclone%20IV%2FV-0071C5?logo=intel&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-online-success?logo=render&logoColor=white)](https://aoi-pro-pcb-inspection.onrender.com)
 
-> 🌐 **Live demo:** _replace this line with your deployed URL after Step 6 below_
+> 🌐 **Live demo → [aoi-pro-pcb-inspection.onrender.com](https://aoi-pro-pcb-inspection.onrender.com)**
 > &nbsp;&nbsp; 📄 Paper + thesis available on request · 🎓 M.Tech VLSI Design project
 
 <p align="center">
